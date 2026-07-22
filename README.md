@@ -6,8 +6,8 @@ A causal scalar field framework for gravity, where the temporal field is the fun
 
 | Paper | Title | DOI |
 |---|---|---|
-| Paper 1 | A Temporal Decomposition of Gravitational Effects | [10.5281/zenodo.20268614](https://doi.org/10.5281/zenodo.20268614) |
-| Paper 2 | Causal Origin of Spatial Curvature in the Temporal Field Framework | [10.5281/zenodo.21451659](https://doi.org/10.5281/zenodo.21451659) |
+| Paper 1 | A Temporal Decomposition of Gravitational Effects | <a href="https://doi.org/10.5281/zenodo.20268614" target="_blank">10.5281/zenodo.20268614</a> |
+| Paper 2 | Causal Origin of Spatial Curvature in the Temporal Field Framework | <a href="https://doi.org/10.5281/zenodo.21451659" target="_blank">10.5281/zenodo.21451659</a> |
 
 ## Summary
 
@@ -19,8 +19,8 @@ A causal scalar field framework for gravity, where the temporal field is the fun
 
 | File | Description |
 |---|---|
-| `paper1-temporal-decomposition.tex` | Paper 1 LaTeX source |
-| `paper2-spatial-curvature.tex` | Paper 2 LaTeX source |
+| `temporal-field-framework.tex` | Paper 1 LaTeX source |
+| `causal-origin-of-spatial-curvature.tex` | Paper 2 LaTeX source |
 
 ## License
 
