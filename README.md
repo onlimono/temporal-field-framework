@@ -20,7 +20,7 @@ A causal scalar field framework for gravity, where the temporal field is the fun
 | File | Description |
 |---|---|
 | `temporal-field-framework.tex` | Paper 1 LaTeX source |
-| `causal-origin-of-spatial-curvature.tex` | Paper 2 LaTeX source |
+| `spatial-curvature.tex` | Paper 2 LaTeX source |
 
 ## License
 
