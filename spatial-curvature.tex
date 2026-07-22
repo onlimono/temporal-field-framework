@@ -1,0 +1,607 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Causal Origin of Spatial Curvature in the Temporal Field Framework}
+
+\author{Yongsu Gwak\\[6pt]\normalsize Independent Researcher\\[2pt]\normalsize\texttt{onlimono@gmail.com}}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We extend the static temporal field framework by introducing spatial curvature through a causal mechanism. The energy density generates the temporal scalar field $\Phi_t$, which in turn generates spatial curvature. The coupling parameter $\kappa(\Phi_t)$ is uniquely determined by the exact symmetry condition that the temporal and spatial factors in the coordinate speed of light be equal. This condition yields $\kappa(\Phi_t) = (e^{2\Phi_t}-1)/\Phi_t$, with $\kappa \to 2$ in the weak-field limit, and is equivalently stated as the requirement that the spatial slices be conformally flat with a conformal factor exactly matched to the temporal perturbation. The metric simplifies to $ds^2 = -e^{-2\Phi_t}\,c^2\,dt^2 + e^{2\Phi_t}\,\delta_{ij}\,dx^i\,dx^j$, determined entirely by the single scalar field $\Phi_t$ with no free parameters. The complete nonlinear field equation is derived from a modified action that incorporates the spatial curvature. Post-Newtonian analysis shows that $\kappa \to 2$ reproduces the exact general-relativistic predictions for all four classical tests: perihelion precession, light deflection, Shapiro time delay, and gravitational redshift. The agreement with general relativity is a consequence of the symmetry condition, not an input: the empirical PPN parameter $\gamma_{\rm PPN} = 1$ is derived rather than assumed. The framework provides a causal interpretation of spacetime geometry: gravity is fundamentally a temporal phenomenon, and spatial curvature is generated as a necessary consequence of temporal-spatial symmetry of the metric.
+\end{abstract}
+
+\noindent\textbf{Keywords:} gravitation; scalar field; spatial curvature; causal structure
+
+
+\section{Introduction}
+\label{sec:intro}
+
+A self-consistent framework for decomposing gravitational effects into temporal and spatial contributions has been developed by enforcing Euclidean spatial geometry~\cite{Gwak2026}. In this framework, the full gravitational dynamics are attributed to a single scalar field $g_t(\mathbf{x})$ that encodes the local scaling of proper time relative to coordinate time, $d\tau = g_t\,dt$, while the spatial metric remains fixed as the Euclidean metric $\delta_{ij}$. The temporal field satisfies a Gauss-type equation sourced by the energy density, and particle dynamics follow from a variational principle. The framework reproduces Newtonian gravity exactly and agrees with the temporal component of the Schwarzschild metric to first order in $GM/(c^2 r)$. By isolating the temporal contribution, it enables a quantitative decomposition of gravitational effects: perihelion precession is prograde at one-third, light deflection and Shapiro time delay at one-half, and gravitational redshift to leading order of the general relativistic values.
+
+However, the assumption of Euclidean spatial geometry imposes a fundamental limitation. While the temporal field alone accounts for a definite fraction of each gravitational effect, the remaining fraction---attributed to spatial curvature in the general-relativistic decomposition---is absent from the framework. The decomposition ratios (one-third, one-half) quantify the temporal contribution but cannot be completed to unity without introducing spatial curvature. This raises the question: can spatial curvature be incorporated into the temporal field framework in a principled manner, and if so, does the resulting theory reproduce the full general-relativistic predictions?
+
+In this paper, we answer both questions affirmatively. We introduce spatial curvature not as an independent dynamical degree of freedom but as a consequence of the temporal field. The central premise is a causal chain: energy density generates the temporal field, and the temporal field in turn generates spatial curvature. The coupling strength between the temporal field and spatial curvature is governed by a function $\kappa(\Phi_t)$, uniquely determined by the exact symmetry condition that the temporal and spatial factors in the coordinate speed of light be equal. This condition yields $\kappa(\Phi_t) = (e^{2\Phi_t}-1)/\Phi_t$, with $\kappa \to 2$ in the weak-field limit. The symmetry condition is equivalently stated as the requirement that the spatial slices be conformally flat with a conformal factor exactly matched to the temporal perturbation. The resulting metric, $ds^2 = -e^{-2\Phi_t}\,c^2\,dt^2 + e^{2\Phi_t}\,\delta_{ij}\,dx^i\,dx^j$, is determined entirely by the single scalar field $\Phi_t$ with no free parameters. Post-Newtonian analysis shows that $\kappa \to 2$ reproduces the exact general-relativistic predictions for all four classical tests. The result provides a causal rederivation of the empirical PPN parameter $\gamma_{\rm PPN}$. The value $\gamma_{\rm PPN} = 1$, treated as an observationally determined constant in the PPN formalism~\cite{Will2014}, is here derived from the temporal-spatial symmetry requirement within a single-degree-of-freedom framework.
+
+The paper is organized as follows. In Section~\ref{sec:causal_kappa}, we establish the causal structure, determine $\kappa(\Phi_t)$ from the symmetry condition, and verify the result against general relativity. In Section~\ref{sec:field_equation}, we derive the complete nonlinear field equation from a modified action. In Section~\ref{sec:post_newtonian}, we compute the post-Newtonian predictions and verify that $\kappa \to 2$ reproduces the general-relativistic results for all four classical tests. We conclude in Section~\ref{sec:conclusion}.
+
+
+\section{Causal Structure and the Coupling Parameter $\kappa$}
+\label{sec:causal_kappa}
+
+The static temporal field framework~\cite{Gwak2026} assumes Euclidean spatial geometry, $g_{ij} = \delta_{ij}$, and attributes all gravitational effects to a single scalar field $\Phi_t = -\ln g_t$. While this assumption reproduces Newtonian gravity exactly and yields definite decomposition ratios for the post-Newtonian effects (one-third for perihelion precession, one-half for light deflection and Shapiro time delay), it cannot reproduce the full general-relativistic predictions. In this section, we introduce spatial curvature into the framework, determine the coupling parameter from a symmetry condition, and verify the result against general relativity.
+
+\subsection{Causal Structure}
+\label{sec:causal}
+
+The central premise of the extended framework is that spatial curvature is generated as a consequence of the temporal field, rather than introduced as an independent source. We propose the causal chain
+\begin{equation}
+T_{00} \;\longrightarrow\; \Phi_t \;\longrightarrow\; h_{ij} = \kappa\,\Phi_t\,\delta_{ij},
+\label{eq:causal_chain}
+\end{equation}
+where $T_{00} = \rho_m c^2$ is the energy density, $\Phi_t = -\ln g_t$ is the temporal potential, and $h_{ij}$ is the spatial metric perturbation defined by
+\begin{equation}
+g_{ij} = \delta_{ij} + h_{ij} = (1 + \kappa\,\Phi_t)\,\delta_{ij}.
+\label{eq:spatial_metric}
+\end{equation}
+
+The dimensionless parameter $\kappa$ governs the coupling strength: it measures the amount of spatial curvature generated per unit of temporal potential. The physical content of Eq.~(\ref{eq:causal_chain}) is as follows: energy density creates the temporal field through the Gauss-type equation~\cite{Gwak2026},
+\begin{equation}
+\nabla^2 \Phi_t = -\rho_t, \qquad \rho_t = \frac{4\pi G}{c^4}\,T_{00},
+\label{eq:gauss}
+\end{equation}
+and the temporal field in turn generates spatial curvature with strength $\kappa$.
+
+A key feature of the causal chain is that spatial curvature is generated without requiring $T_{ij}$ as an independent source. In the standard decomposition of general relativity, the spatial metric perturbation is sourced both directly by $T_{ij}$ and indirectly by $T_{00}$ through the coupled structure of the Einstein field equations: $T_{00}$ determines $g_{00}$ through the temporal field equation, and $g_{00}$ in turn influences $g_{ij}$ because both metric components appear together in the spatial field equations. In the present framework, the same indirect transmission is achieved through a simpler causal chain: $T_{00}$ generates $\Phi_t$, and $\Phi_t$ generates $h_{ij}$ with strength $\kappa$, without requiring $T_{ij}$ as an independent source for the creation of spatial curvature.
+
+\subsection{Determination of $\kappa$}
+\label{sec:kappa}
+
+We now determine $\kappa$ from a symmetry condition stated within the framework's own metric structure. The complete metric, incorporating both the temporal field and the spatial curvature generated by the causal chain~(\ref{eq:causal_chain}), is
+\begin{equation}
+ds^2 = -e^{-2\Phi_t}\,c^2\,dt^2 + (1 + \kappa\,\Phi_t)\,\delta_{ij}\,dx^i\,dx^j,
+\end{equation}
+where $\kappa$ has not yet been specified.
+
+\paragraph{Coordinate speed of light.}
+
+For a photon, the null condition $ds^2 = 0$ gives the coordinate speed of light along a radial path:
+$$
+\frac{dr}{dt}\bigg|_{\text{null}} = c\,\frac{e^{-\Phi_t}}{\sqrt{1 + \kappa\,\Phi_t}}.
+$$
+The coordinate speed is the product of two factors:
+$$
+c_{\rm coord} = c \cdot \underbrace{e^{-\Phi_t}}_{\text{temporal factor}} \cdot \underbrace{(1 + \kappa\,\Phi_t)^{-1/2}}_{\text{spatial factor}}.
+$$
+
+\paragraph{Symmetry condition.}
+
+In the causal structure of Eq.~(\ref{eq:causal_chain}), spatial curvature is generated by the temporal field alone, with no additional energy beyond what the temporal field provides. The spatial factor in the coordinate speed of light is therefore bounded by the temporal factor that produces it. In general relativity, light propagation determines the causal structure of spacetime~\cite{Hawking1973}. In the present framework, light ($v = c$) propagates without velocity suppression and therefore engages the spatial geometry to the maximum extent consistent with the causal bound (Section~\ref{sec:regimes}). This maximum corresponds to equal temporal and spatial factors:
+$$
+e^{-\Phi_t} = (1 + \kappa\,\Phi_t)^{-1/2}.
+\label{eq:exact_symmetry}
+$$
+This is the exact symmetry condition: the temporal and spatial factors in the coordinate speed of light are identical at every point.
+
+\paragraph{Coupling parameter.}
+
+Squaring Eq.~(\ref{eq:exact_symmetry}) and solving for $\kappa$:
+\begin{equation}
+\kappa(\Phi_t) = \frac{e^{2\Phi_t} - 1}{\Phi_t}.
+\label{eq:kappa_function}
+\end{equation}
+The coupling parameter is not a constant but a function of the temporal potential. Expanding:
+$$
+\kappa(\Phi_t) = 2 + 2\,\Phi_t + \frac{4}{3}\,\Phi_t^2 + \cdots
+$$
+In the weak-field regime ($\Phi_t \ll 1$), $\kappa \to 2$, reproducing the value that enters all post-Newtonian predictions of Section~\ref{sec:post_newtonian}.
+
+\paragraph{Simplification of the metric.}
+
+Substituting Eq.~(\ref{eq:kappa_function}) into the spatial metric:
+$$
+1 + \kappa(\Phi_t)\,\Phi_t = 1 + e^{2\Phi_t} - 1 = e^{2\Phi_t}.
+$$
+The full metric therefore simplifies to
+\begin{equation}
+ds^2 = -e^{-2\Phi_t}\,c^2\,dt^2 + e^{2\Phi_t}\,\delta_{ij}\,dx^i\,dx^j.
+\label{eq:exact_metric}
+\end{equation}
+
+\paragraph{Geometric interpretation.}
+
+The exact symmetry condition~(\ref{eq:exact_symmetry}) is equivalently stated as the requirement that the spatial slices be conformally flat with a conformal factor precisely matched to the temporal perturbation:
+\begin{equation}
+g_{ij} = e^{2\Phi_t}\,\delta_{ij} = \left(|g_{00}|\right)^{-1}\delta_{ij}.
+\end{equation}
+This relation holds exactly, not as an approximation. The metric~(\ref{eq:exact_metric}) is completely determined by the single scalar field $\Phi_t$, with no free parameters.
+
+\subsection{Physical Regimes}
+\label{sec:regimes}
+
+With $\kappa(\Phi_t)$ established from the exact symmetry condition, we identify three distinct physical regimes characterized by how strongly spatial curvature is activated by the probe's motion.
+
+\paragraph{Light propagation ($v = c$).}
+
+For a photon, the velocity suppression vanishes: $v^2/c^2 = 1$, and spatial curvature is fully activated. Both the temporal and spatial metrics contribute at the same order $O(\Phi_t)$ to the null condition, and with the symmetry condition satisfied, their contributions to the coordinate speed of light are equal.
+
+\paragraph{Spatial resistance.}
+
+The spatial metric perturbation $h_{ij} = (e^{2\Phi_t} - 1)\,\delta_{ij}$ is present in the metric for all probes. However, its dynamical effect on particle motion depends on the particle's velocity. For a massive particle with velocity $v$, the equation of motion is
+$$
+\frac{d^2 x^i}{dt^2} \approx c^2\,\frac{\partial\Phi_t}{\partial x^i} + O(v^2/c^2),
+$$
+where the first term (temporal) is $O(1)$ and the second term (spatial) is suppressed by $v^2/c^2$. This velocity suppression constitutes a form of \emph{spatial resistance}: the spatial geometry resists dynamical activation unless the probe moves at relativistic speeds. For Mercury, $v/c \sim 1.6 \times 10^{-4}$, so the direct spatial correction to the instantaneous acceleration is suppressed by $v^2/c^2 \sim 10^{-8}$. The Newtonian gravitational acceleration is therefore determined entirely by the temporal field.
+
+\paragraph{Gravitational redshift.}
+
+The redshift of light escaping from a gravitational field is a purely temporal effect. A photon emitted at frequency $\nu_{\rm em}$ where proper time runs at rate $g_t = e^{-\Phi_t}$ is observed at infinity with reduced frequency. Since proper time runs slower near the mass, each oscillation cycle occupies a longer interval when measured in coordinate time. The same number of wave crests therefore arrives over a longer coordinate time interval at the observer, producing a lower observed frequency:
+$$
+\frac{\nu_{\rm obs}}{\nu_{\rm em}} \approx 1 - \frac{GM}{c^2\,r}, \qquad \frac{\lambda_{\rm obs}}{\lambda_{\rm em}} \approx 1 + \frac{GM}{c^2\,r}.
+$$
+The spatial metric does not enter this calculation because the redshift depends only on the ratio of $g_t$ at emission and reception. The redshift is therefore independent of $\kappa$ and requires only the temporal chain $T_{00} \to \Phi_t$.
+
+\paragraph{Summary.}
+
+\begin{center}
+\small
+\begin{tabular}{llll}
+\hline
+Regime & Temporal & Spatial & Activation \\
+\hline
+Light ($v = c$) & $O(1)$ & $O(1)$ & Fully activated (symmetry condition) \\
+Massive ($v \ll c$) & $O(1)$ & $O(v^2/c^2)$ & Suppressed ($v^2/c^2$) \\
+Redshift & $O(1)$ & None & Not activated \\
+\hline
+\end{tabular}
+\end{center}
+
+The causal chain $T_{00} \to \Phi_t \to h_{ij}$ unifies these three regimes. Energy density creates the temporal field, which directly governs the Newtonian gravitational acceleration, the gravitational redshift, and the local rate of proper time. The temporal field then generates spatial curvature through the coupling $\kappa(\Phi_t)$, which is fully activated only when the probe velocity reaches $c$, and is suppressed by $v^2/c^2$ for massive particles.
+
+\subsection{Verification against General Relativity}
+\label{sec:gr_verification}
+
+The coupling parameter $\kappa(\Phi_t)$ was determined in Section~\ref{sec:kappa} from a symmetry condition stated within the framework, without reference to general relativity. We now verify the result a posteriori.
+
+The temporal potential $\Phi_t = U \equiv GM/(c^2 r)$ is the exact spherical solution of the linearized field equation~\cite{Gwak2026}. Substituting into the exact metric~(\ref{eq:exact_metric}):
+$$
+ds^2\big|_{\text{ext}} = -e^{-2U}\,c^2\,dt^2 + e^{2U}\,\delta_{ij}\,dx^i\,dx^j.
+$$
+
+In the static analysis~\cite{Gwak2026}, the temporal field $g_t = e^{-U}$ was shown to agree with the Schwarzschild temporal component $\sqrt{1-2U}$ to first order in $U$, with a second-order deviation identified as a potentially significant departure. This deviation is now resolved: it arises entirely from the difference between Schwarzschild radial coordinates and isotropic coordinates. In isotropic coordinates, the Schwarzschild metric takes the form $g_{00} = -(1-2U+2U^2-\cdots)$, which coincides with $-e^{-2U} = -(1-2U+2U^2-\cdots)$ to $O(U^2)$, confirming that the temporal metric of the present framework matches the Schwarzschild solution at post-Newtonian order in these coordinates.
+
+The temporal component $g_{00} = -e^{-2U} = -(1-2U+2U^2-\cdots)$ reproduces $\beta_{\rm PPN} = 1$, which follows directly from the exponential form of $g_{00}$ rather than from the coupling parameter $\kappa$. The spatial component $g_{ij} = e^{2U}\,\delta_{ij} = (1+2U+2U^2+\cdots)\,\delta_{ij}$ corresponds to $\gamma_{\rm PPN} = \kappa(0)/2 = 2/2 = 1$ in the weak-field limit. The two PPN parameters thus have distinct origins: $\beta_{\rm PPN} = 1$ is a property of the temporal sector alone, while $\gamma_{\rm PPN} = 1$ is a consequence of the symmetry condition $\kappa(0) = 2$.
+
+The agreement is therefore a consequence of the symmetry condition, not an input: $\kappa(\Phi_t)$ is determined by a framework-internal principle, and the correspondence with general relativity is verified after the fact.
+
+\subsection{Relation to PPN}
+\label{sec:ppn_comparison}
+
+All observations discussed above are equally consistent with general relativity ($\gamma_{\rm PPN} = 1$) and the present framework ($\gamma_{\rm PPN} = \kappa(0)/2 = 1$). The two frameworks produce identical numerical predictions. The distinction is structural.
+
+In the PPN formalism~\cite{Will2014}, the weak-field metric is parameterized as
+$$
+g_{00} = -(1 - 2U), \qquad g_{ij} = (1 + 2\gamma_{\rm PPN}\,U)\,\delta_{ij},
+$$
+where $\gamma_{\rm PPN}$ is a free parameter encoding the ratio of spatial to temporal metric perturbations. The formalism does not explain why $\gamma_{\rm PPN} = 1$; it merely records the observationally favored value. The spatial metric perturbation is treated as an independent degree of freedom, with no causal mechanism relating the temporal and spatial sectors. The Newtonian limit is guaranteed by construction, since the formalism is built as a perturbative expansion around the Newtonian potential.
+
+In the present framework, the same metric emerges from the causal chain~(\ref{eq:causal_chain}). The temporal field $\Phi_t$ is the sole dynamical degree of freedom, sourced directly by the energy density. Spatial curvature is generated as a consequence of the temporal field, with the coupling $\kappa(\Phi_t)$ derived from the exact symmetry condition (Section~\ref{sec:kappa}). The Newtonian limit follows automatically from the causal structure: $\Phi_t = 0$ implies $h_{ij} = 0$.
+
+\begin{center}
+\small
+\begin{tabular}{p{3.0cm} p{5.1cm} p{5.7cm}}
+\hline
+Feature & PPN & Temporal field framework \\
+\hline
+$\gamma_{\rm PPN}$ & Free parameter (observed $=1$) & Derived from symmetry [$\kappa(0) = 2$] \\
+$h_{ij}$ source & Independent degree of freedom & Generated from $\Phi_t$ \\
+Temporal--spatial link & No causal mechanism & $\Phi_t \to h_{ij}$ (causal) \\
+Newtonian limit & Built into the formalism & Automatic: $\Phi_t=0 \Rightarrow h_{ij}=0$ \\
+Universality & Assumed & $\kappa(\Phi_t)$ is a metric property, enforced by equivalence principle \\
+\hline
+\end{tabular}
+\end{center}
+
+The coupling $\kappa(\Phi_t)$ is a property of the spacetime metric, not of the probe particle. The symmetry condition that determines $\kappa(\Phi_t)$ is stated within the framework's own metric structure, without reference to general relativity. Once the metric is fixed, all geodesics---massive and massless alike---follow from the same geometry. This is consistent with the equivalence principle: different coupling functions for different probes would imply distinct spacetime geometries, contradicting the universality of free fall. Current experimental tests confirm the equivalence principle to high precision: lunar laser ranging constrains the fractional difference in gravitational and inertial mass to $10^{-13}$~\cite{Williams2012}, while the MICROSCOPE satellite mission has reached $10^{-15}$~\cite{Touboul2022}.
+
+The numerical predictions are identical, but the explanatory structure differs fundamentally. In PPN, $\gamma_{\rm PPN} = 1$ is an empirical fact without explanation. In the present framework, $\gamma_{\rm PPN} = 1$ is a theoretical consequence of the symmetry condition within the causal structure $T_{00} \to \Phi_t \to h_{ij}$, with $\kappa(0) = 2$ in the weak-field limit. The framework does not merely parameterize the ratio of spatial to temporal metric perturbations; it derives this ratio from a physical principle and provides a causal mechanism for the observed spacetime geometry.
+
+
+\section{Nonlinear Field Equation}
+\label{sec:field_equation}
+
+Having established the causal structure $T_{00} \to \Phi_t \to h_{ij}$ and the exact metric~(\ref{eq:exact_metric}) with $\kappa(\Phi_t)$ determined by the symmetry condition of Section~\ref{sec:kappa}, we now derive the complete nonlinear field equation governing the temporal potential $\Phi_t$.
+
+\subsection{Modified Action}
+\label{sec:modified_action}
+
+The exact metric~(\ref{eq:exact_metric}) is
+$$
+ds^2 = -e^{-2\Phi_t}\,c^2\,dt^2 + e^{2\Phi_t}\,\delta_{ij}\,dx^i\,dx^j,
+$$
+where the spatial sector simplifies dramatically through the relation $1 + \kappa(\Phi_t)\,\Phi_t = e^{2\Phi_t}$. The spatial metric components and their inverses are
+$$
+g_{ij} = e^{2\Phi_t}\,\delta_{ij}, \qquad g^{ij} = e^{-2\Phi_t}\,\delta^{ij},
+$$
+and the determinant of the spatial metric $g \equiv \det(g_{ij})$ is
+$$
+\sqrt{g} = e^{3\Phi_t}.
+$$
+
+This simplification is a direct consequence of the exact symmetry condition: where the constant-$\kappa$ framework required powers of $(1+\kappa\Phi_t)$, the metric with $\kappa(\Phi_t)$ reduces to pure exponentials.
+
+The action governing the temporal potential $\Phi_t$ in the presence of spatial curvature is
+\begin{equation}
+S = \int\left[\frac{c^4}{8\pi G}\,g^{ij}\partial_i\Phi_t\,\partial_j\Phi_t - \rho_m c^2\,\Phi_t\right]\sqrt{g}\,d^3x.
+\end{equation}
+
+The $\sqrt{g}$ factor multiplies the entire integrand. For the gradient term, $g^{ij}\sqrt{g} = e^{\Phi_t}\,\delta^{ij}$; for the source term, $\Phi_t\sqrt{g} = \Phi_t\,e^{3\Phi_t}$. The Lagrangian density with $\sqrt{g}$ absorbed is therefore
+\begin{equation}
+\mathcal{L} = \frac{c^4}{8\pi G}\,e^{\Phi_t}\,|\nabla\Phi_t|^2 - \rho_m c^2\,e^{3\Phi_t}\,\Phi_t.
+\end{equation}
+
+\subsection{Variation}
+\label{sec:variation}
+
+Varying the action with respect to $\Phi_t$ requires the Euler--Lagrange equation:
+$$
+\frac{\partial \mathcal{L}}{\partial \Phi_t} - \partial_i\frac{\partial \mathcal{L}}{\partial(\partial_i \Phi_t)} = 0.
+$$
+
+\paragraph{Gradient term.}
+
+The Lagrangian density for the gradient term is $\mathcal{L}_g = \frac{c^4}{8\pi G}\,e^{\Phi_t}\,|\nabla\Phi_t|^2$. Its derivatives are:
+\begin{align*}
+\frac{\partial \mathcal{L}_g}{\partial \Phi_t} &= \frac{c^4}{8\pi G}\,e^{\Phi_t}\,|\nabla\Phi_t|^2, \\[6pt]
+\frac{\partial \mathcal{L}_g}{\partial(\partial_i\Phi_t)} &= \frac{c^4}{8\pi G}\,2\,e^{\Phi_t}\,\partial_i\Phi_t.
+\end{align*}
+
+Taking the divergence of the second expression:
+\begin{align*}
+\partial_i\frac{\partial \mathcal{L}_g}{\partial(\partial_i\Phi_t)} &= \frac{c^4}{8\pi G}\,\partial_i\!\left[2\,e^{\Phi_t}\,\partial_i\Phi_t\right] \\
+&= \frac{c^4}{8\pi G}\left[2\,e^{\Phi_t}\,\nabla^2\Phi_t + 2\,e^{\Phi_t}\,|\nabla\Phi_t|^2\right].
+\end{align*}
+
+The Euler--Lagrange contribution from the gradient term is therefore
+$$
+\frac{\partial \mathcal{L}_g}{\partial \Phi_t} - \partial_i\frac{\partial \mathcal{L}_g}{\partial(\partial_i\Phi_t)}
+= \frac{c^4}{8\pi G}\left[-2\,e^{\Phi_t}\,\nabla^2\Phi_t - e^{\Phi_t}\,|\nabla\Phi_t|^2\right].
+$$
+
+\paragraph{Source term.}
+
+The Lagrangian density for the source term is $\mathcal{L}_s = -\rho_m c^2\,e^{3\Phi_t}\,\Phi_t$. Its derivative is:
+$$
+\frac{\partial \mathcal{L}_s}{\partial \Phi_t} = -\rho_m c^2\,e^{3\Phi_t}\left(1 + 3\,\Phi_t\right).
+$$
+
+\paragraph{Combining.}
+
+Setting $\delta S / \delta\Phi_t = 0$:
+$$
+\frac{c^4}{8\pi G}\left[-2\,e^{\Phi_t}\,\nabla^2\Phi_t - e^{\Phi_t}\,|\nabla\Phi_t|^2\right]
+= \rho_m c^2\,e^{3\Phi_t}\,(1 + 3\,\Phi_t).
+$$
+
+Dividing both sides by $-2\,\frac{c^4}{8\pi G}\,e^{\Phi_t}$ and noting $\rho_t = 4\pi G\rho_m/c^2$:
+
+\begin{equation}
+\boxed{\nabla^2\Phi_t + \frac{1}{2}\,|\nabla\Phi_t|^2 = -\rho_t\,e^{2\Phi_t}\,(1 + 3\,\Phi_t).}
+\label{eq:full_field_eq}
+\end{equation}
+
+\subsection{Structure of the Field Equation}
+\label{sec:structure}
+
+Equation~(\ref{eq:full_field_eq}) is the complete nonlinear field equation for $\Phi_t$. We decompose it by origin:
+
+\begin{center}
+\small
+\begin{tabular}{lll}
+\hline
+Term & Form & Origin \\
+\hline
+$\nabla^2\Phi_t$ & Linear & Euclidean Laplacian (original TFF) \\
+$\dfrac{1}{2}\,|\nabla\Phi_t|^2$ & Nonlinear & Spatial curvature (gradient sector) \\
+$-\rho_t$ & Linear source & Original TFF source \\
+$-\rho_t\left(e^{2\Phi_t} + 3\,\Phi_t\,e^{2\Phi_t} - 1\right)$ & Nonlinear source & Spatial curvature (source sector) \\
+\hline
+\end{tabular}
+\end{center}
+
+The nonlinear terms originate from spatial curvature: the gradient term from the $e^{\Phi_t}$ factor in the kinetic sector, and the source term from the $e^{3\Phi_t}$ factor in the coupling to matter.
+
+\subsection{Limiting Cases}
+\label{sec:limits}
+
+\paragraph{Weak-field limit ($\Phi_t \ll 1$).}
+
+In the weak-field regime, both nonlinear contributions to Eq.~(\ref{eq:full_field_eq}) are subleading: the gradient term $\frac{1}{2}\,|\nabla\Phi_t|^2$ is $O(\Phi_t^2)$ relative to $\nabla^2\Phi_t$, and the source correction $e^{2\Phi_t} + 3\,\Phi_t\,e^{2\Phi_t} - 1$ is $O(\Phi_t)$. The field equation therefore reduces to the Gauss-type equation of the original temporal field framework~\cite{Gwak2026},
+$$
+\nabla^2\Phi_t = -\rho_t.
+$$
+The external solution $\Phi_t = GM/(c^2 r)$ satisfies this equation exactly, confirming that the Newtonian potential is determined entirely by the temporal field, with spatial curvature entering only as a post-Newtonian correction. This solution does not, however, satisfy the exact nonlinear field equation; the nonlinear correction is determined perturbatively and reproduces the Schwarzschild metric at higher order.
+
+\paragraph{First-order correction ($\Phi_t$ small but non-negligible).}
+
+Expanding $e^{2\Phi_t}(1+3\Phi_t) \approx 1 + 5\Phi_t$:
+$$
+\nabla^2\Phi_t + \frac{1}{2}\,|\nabla\Phi_t|^2 \approx -\rho_t\,(1 + 5\,\Phi_t).
+$$
+This is the form relevant for the strong-field interior of neutron stars, where the compactness $\epsilon = GM/(c^2 R) \sim 0.1\text{--}0.3$.
+
+
+\section{Post-Newtonian Predictions}
+\label{sec:post_newtonian}
+
+With $\kappa(\Phi_t)$ established from the temporal-spatial symmetry condition of Section~\ref{sec:kappa}, we now compute the observable predictions of the extended framework and verify that they reproduce the exact general-relativistic results for all classical tests. We first derive the predictions for general $\kappa$, then set $\kappa = 2$ to demonstrate the recovery.
+
+In the weak-field regime, $\Phi_t = U \equiv GM/(c^2 r)$, and the metric becomes
+\begin{equation}
+ds^2 = -(1 - 2U)\,c^2\,dt^2 + (1 + \kappa\,U)\,\delta_{ij}\,dx^i\,dx^j.
+\label{eq:pn_metric}
+\end{equation}
+where $\kappa \equiv \kappa(0) = 2$ in the weak-field limit. For $\kappa = 2$, this coincides with the linearized Schwarzschild metric in isotropic coordinates. The PPN parameters $\beta_{\rm PPN} = 1$ (from the exponential $g_{00}$) and $\gamma_{\rm PPN} = \kappa(0)/2 = 1$ (from the symmetry condition) were established in Section~\ref{sec:gr_verification}.
+
+\subsection{Perihelion Precession}
+\label{sec:perihelion}
+
+For the perihelion precession, the nonlinear structure of $g_{00}$ at $O(U^2)$ contributes to the orbit equation. We therefore retain the full exponential form $g_{00} = -e^{-2U}$ rather than the linearized approximation. Although the direct dynamical effect of spatial curvature on a massive particle is suppressed by $O(v^2/c^2)$, the orbital geometry is determined by the full metric structure. The conserved angular momentum $L = (1+\kappa U)r^2 d\theta/d\tau$ and the normalization condition both encode the spatial metric at $O(U)$, which enters the orbit equation at the same order as the temporal contribution. In the weak-field regime, $\kappa(\Phi_t) \to 2$; this value therefore applies equally to the perihelion precession.
+
+\subsubsection{Conserved quantities}
+
+The metric is stationary and axially symmetric, yielding two conserved quantities along geodesic motion. For a massive particle in the equatorial plane,
+\begin{equation}
+\tilde{E} = e^{-2U}\,\frac{dt}{d\tau}, \qquad L = (1 + \kappa\,U)\,r^2\,\frac{d\theta}{d\tau},
+\label{eq:conserved}
+\end{equation}
+where $\tau$ is the proper time.
+
+\subsubsection{Orbital equation}
+
+The normalization condition $g_{\mu\nu}\,dx^\mu\,dx^\nu = -c^2\,d\tau^2$ gives
+$$
+-e^{-2\Phi_t}\,c^2\dot{t}^2 + (1 + \kappa\,\Phi_t)\left(\dot{r}^2 + r^2\dot{\theta}^2\right) = -c^2,
+$$
+where the dot denotes $d/d\tau$. Substituting the conserved quantities~(\ref{eq:conserved}) and introducing $u = 1/r$ with $\Phi_t = \epsilon\,u$ where $\epsilon = GM/c^2$, we obtain the orbit integral. Expanding $e^{2\epsilon u} - 1 \approx 2\epsilon\,u + 2\epsilon^2 u^2$ and retaining terms through $O(\epsilon^2)$, the term proportional to $\tilde{E}^2 - 1$ is absorbed into the integration constant and does not affect the orbital frequency. The remaining $u$-dependent terms yield
+$$
+\left(\frac{du}{d\theta}\right)^2 + u^2 = \frac{2\epsilon\,c^2}{L^2}\,u + \frac{2(1+\kappa)\,\epsilon^2 c^2}{L^2}\,u^2.
+$$
+
+Differentiating with respect to $\theta$ and dividing by $2\,du/d\theta$:
+\begin{equation}
+\frac{d^2 u}{d\theta^2} + u = \frac{1}{p} + \frac{2(1+\kappa)\,GM}{c^2\,p}\,u,
+\label{eq:orbit_equation}
+\end{equation}
+where $p = L^2/(GM) = a(1 - e_{\rm ecc}^2)$ is the semi-latus rectum. The first term on the right is the Newtonian contribution. The second term is a post-Newtonian correction that is linear in $u$, containing both the temporal contribution (from the exponential $g_{00}$) and the spatial contribution (from $g_{ij}$) with coupling $\kappa$.
+
+\subsubsection{Precession}
+
+The Newtonian solution is $u_0(\theta) = (1 + e_{\rm ecc}\cos\theta)/p$. The post-Newtonian correction in Eq.~(\ref{eq:orbit_equation}) modifies the orbital frequency. Substituting $u_0$ into the correction term, the resonant part proportional to $\cos\theta$ produces secular growth:
+$$
+u_1(\theta) = \frac{(1+\kappa)\,GM}{c^2\,p^2}\,e_{\rm ecc}\,\theta\sin\theta.
+$$
+
+The perihelion ($u' = 0$) shifts by $\delta\theta$ per orbit, yielding
+\begin{equation}
+\boxed{\Delta\theta = \frac{2\pi\,(1 + \kappa)\,GM}{c^2\,a(1 - e_{\rm ecc}^2)}.}
+\label{eq:perihelion}
+\end{equation}
+
+The factor $(1 + \kappa)$ decomposes as $1$ (temporal contribution, from $g_{00} = -e^{-2\Phi_t}$) and $\kappa$ (spatial contribution, from $g_{ij} = (1 + \kappa\,\Phi_t)\,\delta_{ij}$).
+
+\subsubsection{Limits}
+
+\begin{center}
+\small
+\begin{tabular}{lccc}
+\hline
+Framework & $\kappa$ & $\Delta\theta$ & GR ratio \\
+\hline
+Temporal-only (TFF) & 0 & $\dfrac{2\pi\,GM}{c^2\,a(1-e_{\rm ecc}^2)}$ & $1/3$ \\[8pt]
+Extended ($\kappa = 2$) & 2 & $\dfrac{6\pi\,GM}{c^2\,a(1-e_{\rm ecc}^2)}$ & $1$ \\
+\hline
+\end{tabular}
+\end{center}
+
+For Mercury, $\kappa = 2$ yields $\Delta\theta = 42.98''$/century, in exact agreement with general relativity.
+
+\subsection{Light Deflection}
+\label{sec:deflection}
+
+For light deflection and the Shapiro time delay, only the linearized metric is required, since the leading-order result involves $O(U)$ corrections only. We therefore use $g_{00} \approx -(1-2U)$ in the following two subsections.
+
+\subsubsection{Null geodesic}
+
+For a photon ($ds^2 = 0$), the linearized metric~(\ref{eq:pn_metric}) gives
+$$
+(1 - 2U)\,c^2\,\dot{t}^2 = (1 + \kappa\,U)\left(\dot{r}^2 + r^2\,\dot{\theta}^2\right),
+$$
+where the dot now denotes $d/d\lambda$ with affine parameter $\lambda$. The conserved quantities are
+$$
+\tilde{E} = (1 - 2U)\,c\,\dot{t}, \qquad L = (1 + \kappa\,U)\,r^2\,\dot{\theta}.
+$$
+
+\subsubsection{Deflection integral}
+
+Substituting into the null condition and solving for the orbit equation $d\theta/dr$, we obtain to leading order in $M$:
+$$
+\frac{d\theta}{dr} = \frac{1}{r\sqrt{\frac{r^2}{b^2} - 1}}\left[1 + \frac{(2 + \kappa)\,GM}{c^2\,r} \cdot \frac{1}{\sqrt{\frac{r^2}{b^2} - 1}}\right],
+$$
+where $b = cL/\tilde{E}$ is the impact parameter. Integrating from $r = -\infty$ to $r = +\infty$:
+$$
+\theta = \pi + \frac{(2 + \kappa)\,GM}{b\,c^2}\int_{-\infty}^{\infty}\frac{du}{(1 + u^2)^{3/2}} = \pi + \frac{2(2 + \kappa)\,GM}{b\,c^2}.
+$$
+
+The deflection angle $\alpha = \theta - \pi$:
+\begin{equation}
+\boxed{\alpha = \frac{(2 + \kappa)\,GM}{b\,c^2}.}
+\label{eq:deflection}
+\end{equation}
+
+\subsubsection{Limits}
+
+\begin{center}
+\small
+\begin{tabular}{lccc}
+\hline
+Framework & $\kappa$ & $\alpha$ & GR ratio \\
+\hline
+Temporal-only (TFF) & 0 & $\dfrac{2GM}{bc^2}$ & $1/2$ \\[8pt]
+Extended ($\kappa = 2$) & 2 & $\dfrac{4GM}{bc^2}$ & $1$ \\
+\hline
+\end{tabular}
+\end{center}
+
+For light grazing the Sun, $\kappa = 2$ yields $\alpha = 1.75''$, in exact agreement with general relativity.
+
+\subsection{Shapiro Time Delay}
+\label{sec:shapiro}
+
+\subsubsection{Null geodesic time integral}
+
+For a photon traversing the gravitational field of a mass $M$, the coordinate time interval is obtained from the null condition using the linearized metric:
+$$
+c\,dt = \sqrt{\frac{1 + \kappa\,U}{1 - 2U}}\,\sqrt{dr^2 + r^2\,d\theta^2}.
+$$
+
+In the nearly-straight-line approximation, $r^2\,d\theta^2 \approx b^2\,dr^2/(r^2 - b^2)$, the total coordinate time from emitter ($r_e$) to receiver ($r_p$) becomes
+$$
+t = \frac{1}{c}\int_{r_e}^{r_p}\sqrt{\frac{1 + \kappa\,U}{1 - 2U}} \cdot \frac{r}{\sqrt{r^2 - b^2}}\,dr.
+$$
+
+\subsubsection{Leading-order expansion}
+
+Expanding the metric factor to $O(U)$:
+$$
+\sqrt{\frac{1 + \kappa\,U}{1 - 2U}} \approx 1 + \left(1 + \frac{\kappa}{2}\right)U = 1 + \frac{(1 + \kappa/2)\,GM}{c^2\,r}.
+$$
+
+The additional time delay relative to the flat-space travel time is
+$$
+\Delta t = \frac{1}{c}\int_{r_e}^{r_p}\frac{(1 + \kappa/2)\,GM}{c^2\,r} \cdot \frac{r}{\sqrt{r^2 - b^2}}\,dr = \frac{(1 + \kappa/2)\,GM}{c^3}\int_{r_e}^{r_p}\frac{dr}{\sqrt{r^2 - b^2}}.
+$$
+
+For $r_e, r_p \gg b$, the integral evaluates to
+$$
+\int_{r_e}^{r_p}\frac{dr}{\sqrt{r^2 - b^2}} \approx \ln\!\left(\frac{4\,r_e\,r_p}{b^2}\right).
+$$
+
+The Shapiro time delay:
+\begin{equation}
+\boxed{\Delta t = \frac{(1 + \kappa/2)\,GM}{c^3}\,\ln\!\left(\frac{4\,r_e\,r_p}{b^2}\right).}
+\label{eq:shapiro}
+\end{equation}
+
+\subsubsection{Limits}
+
+\begin{center}
+\small
+\begin{tabular}{lccc}
+\hline
+Framework & $\kappa$ & $\Delta t$ & GR ratio \\
+\hline
+Temporal-only (TFF) & 0 & $\dfrac{GM}{c^3}\ln\!\left(\dfrac{4r_e r_p}{b^2}\right)$ & $1/2$ \\[8pt]
+Extended ($\kappa = 2$) & 2 & $\dfrac{2GM}{c^3}\ln\!\left(\dfrac{4r_e r_p}{b^2}\right)$ & $1$ \\
+\hline
+\end{tabular}
+\end{center}
+
+For the Cassini spacecraft ($r_e \sim r_p \sim 1$ AU, $b \sim R_\odot$), $\kappa = 2$ yields $\Delta t \approx 120\,\mu\text{s}$, consistent with the measured Shapiro delay.
+
+\subsection{Summary}
+\label{sec:pn_summary}
+
+\begin{center}
+\small
+\begin{tabular}{lcccc}
+\hline
+Effect & Formula & $\kappa=0$ (TFF) & $\kappa=2$ & Obs.\ confirmed \\
+\hline
+Perihelion & $\dfrac{2\pi(1+\kappa)GM}{c^2 a(1-e_{\rm ecc}^2)}$ & $1/3$ of GR & GR & Yes \\[8pt]
+Light deflection & $\dfrac{(2+\kappa)GM}{bc^2}$ & $1/2$ of GR & GR & Yes \\[8pt]
+Shapiro delay & $\dfrac{(1+\kappa/2)GM}{c^3}\ln(\cdots)$ & $1/2$ of GR & GR & Yes \\[8pt]
+Redshift & $\Phi_t$ & Exact & Exact & Yes \\
+\hline
+\end{tabular}
+\end{center}
+
+The gravitational redshift is determined entirely by the temporal metric $g_{00}$: $\Delta\nu/\nu = GM/(c^2 r)$. Since spatial curvature does not enter $g_{00}$, the redshift is independent of $\kappa$ and agrees with general relativity for any value of $\kappa$. This is consistent with the physical interpretation of Section~\ref{sec:regimes}: the redshift is a purely temporal effect, arising because proper time runs slower in the gravitational field, while the proper speed of light remains constant by the null condition.
+
+Setting $\kappa = 0$ recovers the temporal-only decomposition with the characteristic ratios established in the static analysis~\cite{Gwak2026}. Setting $\kappa = 2$ reproduces the exact general-relativistic predictions for all four classical tests. The coupling parameter $\kappa(\Phi_t)$, determined by the exact symmetry condition of Section~\ref{sec:kappa}, evaluates to $2$ in the weak-field regime where all post-Newtonian observations are made.
+
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+We have extended the temporal field framework by introducing spatial curvature through a causal mechanism. The central result of this paper is the causal chain
+$$
+T_{00} \;\longrightarrow\; \Phi_t \;\longrightarrow\; h_{ij} = \kappa(\Phi_t)\,\Phi_t\,\delta_{ij},
+$$
+in which the energy density generates the temporal field, and the temporal field in turn generates spatial curvature. The coupling parameter $\kappa(\Phi_t)$ is not a free parameter fitted to observations but is uniquely determined by the exact symmetry condition: the temporal and spatial factors in the coordinate speed of light must be equal, $e^{-\Phi_t} = (1+\kappa\,\Phi_t)^{-1/2}$. This condition yields $\kappa(\Phi_t) = (e^{2\Phi_t}-1)/\Phi_t$, which evaluates to $\kappa \to 2$ in the weak-field regime. The symmetry condition is equivalently stated as the requirement that the spatial slices be conformally flat with a conformal factor matched to the temporal perturbation, $g_{ij} = |g_{00}|^{-1}\delta_{ij}$, which holds exactly. The metric simplifies to
+$$
+ds^2 = -e^{-2\Phi_t}\,c^2\,dt^2 + e^{2\Phi_t}\,\delta_{ij}\,dx^i\,dx^j,
+$$
+determined entirely by the single scalar field $\Phi_t$ with no free parameters.
+
+The complete nonlinear field equation governing the temporal potential is
+$$
+\nabla^2\Phi_t + \frac{1}{2}\,|\nabla\Phi_t|^2 = -\rho_t\,e^{2\Phi_t}\,(1 + 3\,\Phi_t),
+$$
+which reduces to the original Gauss-type equation $\nabla^2\Phi_t = -\rho_t$ in the weak-field limit.
+
+The post-Newtonian predictions with $\kappa \to 2$ reproduce the exact general-relativistic results for all four classical tests: perihelion precession ($6\pi GM/[c^2\,a(1-e_{\rm ecc}^2)]$), light deflection ($4GM/[bc^2]$), Shapiro time delay ($2GM/c^3\ln[\cdots]$), and gravitational redshift. The agreement with general relativity is a consequence of the symmetry condition, not an input: the empirical PPN parameter $\gamma_{\rm PPN} = 1$ is derived rather than assumed.
+
+The framework provides a causal interpretation of spacetime geometry: gravity is fundamentally a temporal phenomenon, and spatial curvature is generated as a necessary consequence of temporal-spatial symmetry of the metric.
+
+\subsection{Future Directions}
+\label{sec:future}
+
+The present analysis is restricted to the weak-field regime, where the nonlinear terms in the field equation are negligible and the predictions coincide with general relativity. The natural next step is to investigate the strong-field regime, where these nonlinear terms become significant and may produce observable deviations.
+
+In the strong-field interior of neutron stars, where the compactness $\epsilon = GM/(c^2 R) \sim 0.1\text{--}0.3$, the nonlinear corrections $\frac{1}{2}\,|\nabla\Phi_t|^2$ and $\rho_t\,e^{2\Phi_t}(1+3\Phi_t)$ are no longer negligible. The nonlinear field equation, combined with the equation of hydrostatic equilibrium, yields a modified structure equation that may predict a different mass--radius relation from the Tolman--Oppenheimer--Volkoff equation of general relativity. A quantitative comparison with neutron star observations---such as NICER mass--radius measurements---would provide the first observational test that distinguishes the causal structure from the coupled Einstein equations.
+
+Extensions to time-dependent configurations would replace the Laplacian with a covariant wave operator, opening the framework to dynamical systems. In the causal structure $T_{00} \to \Phi_t \to h_{ij}$, the temporal field responds to changes in the energy density, and spatial curvature is then generated through the coupling $\kappa(\Phi_t)$. Whether this sequential response produces a measurable signature---for example, in the quasinormal mode spectrum of merging compact binaries or in the waveform morphology of gravitational-wave signals---remains an open question that may be addressable with current and next-generation gravitational-wave observatories.
+
+
+\vspace{1em}
+\noindent\textbf{Acknowledgements}
+
+\vspace{0.5em}
+\noindent The author developed the overall theoretical framework and takes full responsibility for the content of this work. AI-based tools were employed to assist in certain analytical derivations, as well as for language refinement and manuscript preparation.
+
+
+\begin{thebibliography}{99}
+
+\bibitem{Gwak2026}
+Y.~Gwak, ``A Temporal Decomposition of Gravitational Effects,'' Zenodo, 2026.
+\href{https://doi.org/10.5281/zenodo.20268614}{doi:10.5281/zenodo.20268614}.
+
+\bibitem{Hawking1973}
+S.~W.~Hawking and G.~F.~R.~Ellis, \textit{The Large Scale Structure of Space-Time} (Cambridge University Press, Cambridge, 1973).
+
+\bibitem{Will2014}
+C.~M.~Will, ``The Confrontation between General Relativity and Experiment,''
+Living Rev.~Relativ.~\textbf{17}, 4 (2014).
+
+\bibitem{Williams2012}
+J.~G.~Williams, S.~G.~Turyshev, and D.~H.~Boggs, ``Lunar Laser Ranging Tests of the Equivalence Principle,''
+Class.~Quantum Grav.~\textbf{29}, 184004 (2012).
+
+\bibitem{Touboul2022}
+P.~Touboul \emph{et al.}, ``MICROSCOPE Mission: Final Results of the Test of the Equivalence Principle,''
+Phys.~Rev.~Lett.~\textbf{129}, 121102 (2022).
+
+\end{thebibliography}
+
+\end{document}

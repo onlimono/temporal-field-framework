@@ -1,0 +1,1263 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{A Temporal Decomposition of Gravitational Effects}
+
+\author{Yongsu Gwak\\[6pt]\normalsize Independent Researcher\\[2pt]\normalsize\texttt{onlimono@gmail.com}}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+We address the question of how much of gravitational phenomenology can be attributed to temporal structure alone, without invoking spatial curvature. To this end, we construct a self-consistent framework defined on Euclidean spatial slices, governed by a single scalar degree of freedom $g_t = d\tau/dt$ that encodes the local scaling of proper time relative to coordinate time. From this field, we introduce a temporal potential $\Phi_t = -\ln g_t$ and a corresponding temporal field $\mathbf{T} = -\nabla\Phi_t$.
+
+The field satisfies a Gauss-type equation $\nabla \cdot \mathbf{T} = (4\pi G/c^4)\, T_{00}$, and the dynamics of test particles follow from a variational principle, yielding the equation of motion $\mathbf{a} = -c^2 g_t^2\,\mathbf{T} + 2\,(\mathbf{v}\cdot\mathbf{T})\,\mathbf{v}$. Both the field equation and the equation of motion are derived from a single action.
+
+The framework reproduces Newtonian gravity exactly and agrees with general relativity to first order in $GM/(c^2 r)$. By retaining only the temporal contribution, it enables a quantitative decomposition of gravitational effects into temporal and spatial components:
+
+perihelion precession is prograde at one-third of the general relativistic magnitude, consistent with the PPN decomposition into temporal and spatial contributions; light deflection yields one-half of the general relativistic value, isolating the equal temporal and spatial contributions present in GR; gravitational redshift agrees with general relativity to leading order, confirming that this effect is purely temporal in origin; and the Shapiro time delay yields one-half of the general relativistic value, consistent with the same temporal--spatial decomposition identified for light deflection.
+
+Deviations from general relativity appear at second order in $GM/(c^2 r)$---precisely where spatial curvature enters GR---and serve as direct measures of the role of spatial geometry. The framework differs from scalar--tensor theories by enforcing a fixed Euclidean spatial geometry and attributing all gravitational dynamics to a single temporal scalar field with no free parameters.
+
+\end{abstract}
+
+\noindent\textbf{Keywords:} general relativity; post-Newtonian formalism; gravitational decomposition
+
+\section{Introduction}
+
+\subsection{Motivation}
+
+General relativity encodes gravitational phenomena in a ten-component metric tensor that entangles temporal and spatial geometry. While this unified description has been confirmed across a remarkable range of experimental tests~\cite{Will2014}---including perihelion precession~\cite{Einstein1915},~\cite{Park2017}, light deflection~\cite{Dyson1920}, gravitational redshift~\cite{Pound1959}, radar echo delay~\cite{Shapiro1964},~\cite{Bertotti2003}, and gravitational wave detection~\cite{Abbott2016}---the individual contributions of temporal and spatial geometry to each observed effect are not directly separated by the theory. The metric tensor provides a complete description, but it does not, by itself, indicate how much of a given phenomenon arises from the temporal component ($g_{00}$) and how much from the spatial components ($g_{ij}$).
+
+This raises a foundational question: what subset of gravitational phenomenology can be attributed to temporal structure alone?
+
+The question is not new. The first systematic investigation was Nordstr\"om's scalar theory of 1912~\cite{Nordstrom1912}, which introduced a single scalar field in place of the metric tensor but failed to predict perihelion precession, light deflection, or gravitational redshift. His revised theory of 1913~\cite{Nordstrom1913}, incorporating the equivalence principle, successfully reproduced gravitational redshift, confirming that this effect is purely temporal in origin. However, it predicted a retrograde perihelion precession opposite to the observed advance, and it failed to reproduce light deflection; the latter occurs because the conformal factor cancels in the null condition $ds^2 = 0$, rendering photon trajectories identical to those in flat spacetime. These failures are informative: they identify specific effects---light deflection and the direction of perihelion precession---that require spatial geometry and cannot be accounted for by temporal structure alone.
+
+Subsequent developments, notably the Brans--Dicke scalar--tensor theory~\cite{Brans1961}, restored agreement with observation by introducing an additional scalar degree of freedom and a free coupling parameter, effectively allowing spatial geometry to vary. However, this generality comes at the cost of obscuring the original question: if spatial geometry is fixed to Euclidean form, what remains?
+
+The present work revisits this question systematically. Rather than modifying the coupling structure to achieve full agreement with general relativity, we construct a self-consistent framework on Euclidean space governed by a single temporal scalar field and quantitatively determine which effects it reproduces, which it partially captures, and where it necessarily fails. The results provide a structured decomposition of gravitational phenomena into temporal and spatial contributions, with the deviations from general relativity serving not as shortcomings but as direct measures of the role of spatial curvature.
+
+\subsection{A Decomposition Problem}
+
+In this work, we pose a precise question: how much of gravitational phenomenology can be explained by temporal structure alone, without invoking spatial curvature? To address this, we construct a self-consistent framework on Euclidean space and quantitatively identify both its successes and its limitations.
+
+The central object is the \emph{temporal degree of freedom}
+$$
+g_t = \frac{d\tau}{dt} ,
+$$
+which encodes the local rate of proper time relative to a reference coordinate time. From this field, we define the temporal potential $\Phi_t = -\ln g_t$ and the temporal field $\mathbf{T} = -\nabla \Phi_t$.
+
+The framework is built from three elements:
+\begin{itemize}
+\item A field equation governing the spatial structure of the temporal field (Section~\ref{sec:field_equation}),
+\item A variational principle from which both the field equation and the equation of motion are derived (Section~\ref{sec:lagrangian}),
+\item An equation of motion relating coordinate acceleration to the temporal field (Section~\ref{sec:eom}).
+\end{itemize}
+
+The temporal source is shown to be
+$$
+\rho_t = \frac{4\pi G}{c^4} T_{00} ,
+$$
+thereby linking the framework to the energy-momentum content of general relativity.
+
+Within this framework, we obtain the following results:
+\begin{itemize}
+\item Newtonian gravity is exactly reproduced, and the temporal degree of freedom $g_t$ agrees with the Schwarzschild result to first order in $GM/(c^2 r)$ (Sections~\ref{sec:newtonian_field} and~\ref{sec:gr_comparison}),
+\item The perihelion precession is prograde at one-third of the general relativistic magnitude, consistent with the PPN decomposition into temporal and spatial contributions (Section~\ref{sec:precession}),
+\item The light deflection is one-half of the general relativistic value, isolating the equal temporal and spatial contributions present in GR (Section~\ref{sec:lensing}),
+\item The gravitational redshift agrees with general relativity to leading order, confirming that this effect is purely temporal in origin (Section~\ref{sec:redshift}),
+\item The Shapiro time delay yields one-half of the general relativistic value, consistent with the same temporal--spatial decomposition identified for light deflection (Section~\ref{sec:shapiro}).
+\end{itemize}
+
+We assume Euclidean spatial geometry throughout. This assumption defines the scope of the framework: it enables a transparent decomposition of gravitational effects into temporal and spatial components, while also making explicit the limits of the description.
+
+\subsection{Organization of the Paper}
+
+The paper is organized as follows. Section~\ref{sec:temporal_structure} introduces the basic definitions. Section~\ref{sec:field_equation} establishes the field equation. Section~\ref{sec:gr_comparison} relates the framework to general relativity and quantifies the agreement. Section~\ref{sec:lagrangian} presents the Lagrangian formulation. Section~\ref{sec:eom} derives the equation of motion. Section~\ref{sec:phenomena} applies the framework to physical phenomena and identifies the temporal and spatial contributions to each effect. Finally, Section~\ref{sec:conclusion} concludes.
+
+
+\section{Temporal Structure}
+\label{sec:temporal_structure}
+
+\subsection{Temporal Degree of Freedom}
+\label{sec:g_t}
+
+We introduce the \emph{temporal degree of freedom} $g_t(\mathbf{x})$, a positive scalar field defined on spatial slices of spacetime. It represents the local scaling of proper time relative to a reference coordinate time. Throughout this work, $\mathbf{x}$ denotes the spatial position on a constant-time slice, and spatial derivatives ($\nabla$) are taken with respect to these coordinates.
+
+We choose a reference coordinate time $t$, normalized such that it coincides with proper time in a reference region where $g_t = 1$. This fixes the normalization of temporal flow and provides a baseline for comparing proper time across spacetime.
+
+The fundamental relation of the framework is
+\begin{equation}
+d\tau = g_t(\mathbf{x})\, dt ,
+\label{eq:proper_time}
+\end{equation}
+where $d\tau$ is the proper time measured by a physical clock at position $\mathbf{x}$. This relation defines how proper time is locally scaled relative to the reference coordinate time.
+
+The field satisfies
+$$
+g_t(\mathbf{x}) > 0 ,
+$$
+ensuring that the mapping between coordinate time and proper time remains monotonic and well-defined. Regions with $g_t < 1$ correspond to slower proper-time flow relative to the reference time $t$.
+
+The temporal degree of freedom $g_t$ is the fundamental quantity of the framework, from which all subsequent structures are derived.
+
+\subsection{Temporal Potential}
+\label{sec:Phi_t}
+
+Although $g_t(\mathbf{x})$ is fundamental, it is convenient to introduce a logarithmic variable that converts multiplicative variations into additive ones. We define the \emph{temporal potential} $\Phi_t(\mathbf{x})$ as
+\begin{equation}
+\Phi_t(\mathbf{x}) = - \ln g_t(\mathbf{x}) .
+\label{eq:temporal_potential}
+\end{equation}
+
+Since $g_t > 0$, the temporal potential is well defined wherever the temporal structure is non-vanishing. Because $g_t$ is dimensionless and positive, $\Phi_t$ is also dimensionless, and the normalization $g_t = 1$ corresponds to $\Phi_t = 0$.
+
+In terms of $\Phi_t$, the proper time becomes
+\begin{equation}
+d\tau = e^{-\Phi_t(\mathbf{x})} dt .
+\end{equation}
+
+Thus, $\Phi_t$ provides an additive representation of temporal scaling, while $g_t$ retains its multiplicative interpretation. All physical content is encoded in $g_t$, with $\Phi_t$ serving as a convenient reparameterization.
+
+\subsection{Temporal Field}
+\label{sec:T}
+
+Spatial variations of the temporal potential define a vector field that characterizes the inhomogeneity of temporal flow.
+
+We define the \emph{temporal field} $\mathbf{T}(\mathbf{x})$ as
+\begin{equation}
+\mathbf{T}(\mathbf{x}) = - \nabla \Phi_t(\mathbf{x}) .
+\label{eq:temporal_field}
+\end{equation}
+
+Using the definition of $\Phi_t$, this can be written equivalently as
+\begin{equation}
+\mathbf{T}(\mathbf{x}) = \frac{\nabla g_t(\mathbf{x})}{g_t(\mathbf{x})} ,
+\label{eq:temporal_field_gt}
+\end{equation}
+which points in the direction of increasing $g_t$, corresponding to regions where proper time flows faster relative to the reference coordinate time.
+
+The temporal field is not an independent variable; it is fully determined by the spatial variation of $g_t$ and introduces no additional degrees of freedom.
+
+\subsection{Static Spacetime Assumption}
+\label{sec:static}
+
+Throughout this work, we assume that $g_t$ does not depend explicitly on the coordinate time $t$:
+$$
+\frac{\partial g_t}{\partial t} = 0 .
+$$
+
+This is the static spacetime assumption. Under this condition, the spatial gradient $\nabla$ fully captures variations in the temporal structure, and the field equation (Section~\ref{sec:field_equation}) reduces to a time-independent Poisson-type equation.
+
+This assumption is appropriate for isolated gravitational systems such as the Schwarzschild solution, where the metric is time-independent in standard coordinates.
+
+Extensions to time-dependent configurations, including cosmological spacetimes, would require replacing the spatial Laplacian with a d'Alembertian operator and incorporating time derivatives of $g_t$. Such extensions are left for future work.
+
+The quantities introduced in this section provide the fundamental kinematic structure used throughout the remainder of this work.
+
+
+\section{Field Equation of the Temporal Field}
+\label{sec:field_equation}
+
+The temporal field is introduced kinematically through the relation $\mathbf{T} = -\nabla \Phi_t$, which characterizes spatial inhomogeneity in the flow of proper time. In order to determine the scalar field $\Phi_t$ from a given matter distribution, a governing differential equation relating the field to its sources is required.
+
+This structure closely parallels Newtonian gravity. In that case, the gravitational potential $\Phi_N$ satisfies the Poisson equation $\nabla^2 \Phi_N = 4\pi G\rho_m$, which can be derived from Gauss's law for the gravitational field $\mathbf{g}_N = -\nabla \Phi_N$. Both formulations share a common pattern: a vector field expressed as the gradient of a scalar potential, and a scalar source density generating the field.
+
+This analogy motivates the introduction of a Gauss-type law for the temporal field $\mathbf{T}$. In the present framework, the same structural relationship between field and source is assumed to hold, leading naturally to a field equation that governs the dynamics of $\Phi_t$.
+
+\subsection{Field Equation}
+\label{sec:field_eq}
+
+We postulate that the temporal field is locally sourced and that its flux through a closed surface reflects the enclosed source distribution:
+$$
+\oint_{\partial V} \mathbf{T} \cdot d\mathbf{S} = \int_V \rho_t \, dV ,
+$$
+where $V$ is an arbitrary spatial volume, $\partial V$ its boundary, and $\rho_t(\mathbf{x})$ the scalar \emph{temporal source density}.
+
+Applying the divergence theorem yields the local differential form
+\begin{equation}
+\nabla \cdot \mathbf{T} = \rho_t .
+\label{eq:gauss_tff}
+\end{equation}
+
+Substituting Eq.~(\ref{eq:temporal_field}), we obtain a Poisson-type equation for the temporal potential:
+\begin{equation}
+\nabla^2 \Phi_t = - \rho_t .
+\label{eq:poisson_tff}
+\end{equation}
+
+\paragraph{Sign convention.}
+The negative sign in Eq.~(\ref{eq:poisson_tff}) follows from the definition $\Phi_t = -\ln g_t$. In the presence of positive mass, $g_t$ decreases, implying that $\Phi_t$ increases, which corresponds to gravitational time dilation. This is opposite to the Newtonian convention $\nabla^2\Phi_N = +4\pi G\rho_m$, where $\Phi_N$ decreases in the presence of mass. The two conventions are related by $\Phi_t = -\Phi_N/c^2$, as shown below.
+
+\subsection{Newtonian Limit}
+\label{sec:newtonian_field}
+
+We now verify that the field equation reproduces the Newtonian limit.
+
+The temporal source density is identified as
+\begin{equation}
+\rho_t = \frac{4\pi G}{c^4} T_{00} ,
+\label{eq:temporal_source}
+\end{equation}
+where $T_{00}$ is the time-time component of the stress-energy tensor. The proportionality constant $4\pi G/c^4$ is fixed by requiring consistency with the Newtonian limit. This identification corresponds to the simplest dimensionally consistent coupling $\Phi_t\, T_{00}$ in the action (Section~\ref{sec:field_action}), which is the unique leading-order interaction between a dimensionless scalar field and the energy density.
+
+In the non-relativistic regime, we adopt the standard approximation~\cite{MTW1973},~\cite{Wald1984}
+$$
+T_{00} \to \rho_m c^2,
+$$
+where $\rho_m$ is the mass density. Substituting into Eq.~(\ref{eq:poisson_tff}) gives
+\begin{equation}
+\nabla^2 \Phi_t = -\frac{4\pi G}{c^4} \cdot \rho_m c^2 = -\frac{4\pi G\rho_m}{c^2} .
+\end{equation}
+
+Comparing with the Newtonian Poisson equation, we identify
+\begin{equation}
+\Phi_t = -\frac{\Phi_N}{c^2} .
+\end{equation}
+
+The temporal field then becomes
+\begin{equation}
+\mathbf{T} = -\nabla\Phi_t = \frac{\nabla\Phi_N}{c^2} = -\frac{\mathbf{g}_N}{c^2} ,
+\end{equation}
+where $\mathbf{g}_N = -\nabla\Phi_N$.
+
+\subsection{Spherical Solution}
+\label{sec:spherical}
+
+We now consider a spherically symmetric point mass $M$ at the origin. By symmetry, the temporal field is radial, $\mathbf{T} = T(r)\hat{r}$.
+
+Applying the integral form of the field equation to a sphere of radius $r$,
+$$
+\oint_{\partial V} \mathbf{T} \cdot d\mathbf{S} = 4\pi r^2 T(r) = \int_V \rho_t \, dV .
+$$
+
+For a point mass, the enclosed energy is $E = Mc^2$. Using Eq.~(\ref{eq:temporal_source}), we obtain
+$$
+4\pi r^2 T(r) = \frac{4\pi GM}{c^2} .
+$$
+
+Thus,
+\begin{equation}
+T(r) = \frac{GM}{c^2 r^2} .
+\label{eq:temporal_field_spherical}
+\end{equation}
+
+Using the relation $\mathbf{T} = \nabla g_t / g_t$ from Eq.~(\ref{eq:temporal_field_gt}), we obtain the radial equation
+$$
+\frac{dg_t}{dr} = \frac{GM}{c^2 r^2} \, g_t .
+$$
+
+Separating variables and integrating yields
+$$
+\ln g_t = -\frac{GM}{c^2 r} + C .
+$$
+
+Imposing the boundary condition $g_t \to 1$ as $r \to \infty$ gives $C=0$, and therefore
+\begin{equation}
+g_t(r) = \exp\left(-\frac{GM}{c^2 r}\right) .
+\label{eq:gt_spherical}
+\end{equation}
+
+From $\Phi_t = -\ln g_t$, this exactly implies 
+\begin{equation}
+\Phi_t = \frac{GM}{c^2 r} .
+\end{equation}
+
+Using the identification $\Phi_t = -\Phi_N/c^2$, we recover $\Phi_N = -GM/r$, confirming consistency with the Newtonian limit.
+
+
+\section{Comparison with General Relativity}
+\label{sec:gr_comparison}
+
+Having established the kinematic definitions and the field equation, we now relate the temporal field framework (TFF) to general relativity (GR) and quantify their agreement.
+
+In general relativity, the proper time of a stationary observer is determined by the time-time component of the metric tensor:
+\begin{equation}
+d\tau = \sqrt{-g_{00}}\, dt \qquad \text{(GR, stationary observer)} .
+\end{equation}
+
+Comparing with Eq.~(\ref{eq:proper_time}), we identify
+\begin{equation}
+g_t = \sqrt{-g_{00}} \qquad \text{(stationary observer)} .
+\end{equation}
+
+For the Schwarzschild metric~\cite{Schwarzschild1916}, this yields
+\begin{equation}
+g_t^{\text{GR}} = \sqrt{1 - \frac{2GM}{c^2 r}} .
+\end{equation}
+
+The temporal field framework retains this identification for the temporal component but replaces the spatial metric with the Euclidean form $\delta_{ij}$. Accordingly, the temporal field framework can be interpreted as extracting the $g_{00}$ component of general relativity while imposing $g_{ij} = \delta_{ij}$. The resulting effective metric is
+\begin{equation}
+ds^2 = -g_t^2(\mathbf{x})\, c^2 dt^2 + |d\mathbf{x}|^2 .
+\label{eq:tff_metric}
+\end{equation}
+
+This construction clarifies the relationship between TFF and GR: the framework captures the temporal contribution to gravitational effects while omitting spatial curvature by design.
+
+We now quantify the agreement between $g_t^{\text{TFF}}$ and $g_t^{\text{GR}}$. From Eq.~(\ref{eq:gt_spherical}),
+$$
+g_t^{\text{TFF}} = \exp\left(-\frac{GM}{c^2 r}\right) .
+\label{eq:gt_tff}
+$$
+
+Defining the dimensionless parameter
+\begin{equation}
+\epsilon = \frac{GM}{c^2 r} ,
+\end{equation}
+we expand both expressions in powers of $\epsilon$:
+$$
+g_t^{\text{TFF}} = 1 - \epsilon + \frac{\epsilon^2}{2} - \frac{\epsilon^3}{6} + \mathcal{O}(\epsilon^4) ,
+$$
+$$
+g_t^{\text{GR}} = 1 - \epsilon - \frac{\epsilon^2}{2} - \frac{\epsilon^3}{2} + \mathcal{O}(\epsilon^4) .
+$$
+
+The difference is
+\begin{equation}
+g_t^{\text{TFF}} - g_t^{\text{GR}} = \epsilon^2 + \mathcal{O}(\epsilon^3) .
+\label{eq:gt_difference}
+\end{equation}
+
+The two frameworks therefore agree to first order in $\epsilon$ and begin to diverge at second order. This behavior has a clear interpretation: both frameworks capture the leading temporal contribution ($-\epsilon$), while the subleading terms differ due to the absence of spatial curvature in TFF.
+
+\paragraph{Weak-field regime.}
+
+At the surface of the Sun,
+$$
+\epsilon_\odot = \frac{GM_\odot}{c^2 R_\odot} \approx 2.1 \times 10^{-6} ,
+$$
+which gives
+\begin{equation}
+\Delta g_t \approx \epsilon_\odot^2 \approx 4.4 \times 10^{-12} .
+\end{equation}
+
+This deviation is negligible, indicating that both frameworks yield effectively indistinguishable predictions for $g_t$ in weak gravitational fields.
+
+\paragraph{Strong-field regime.}
+
+For a neutron star with typical compactness $\epsilon_{\text{NS}} \approx 0.2$,
+\begin{equation}
+\Delta g_t \approx \epsilon_{\text{NS}}^2 \approx 0.04 ,
+\end{equation}
+corresponding to a deviation of approximately $4\%$. At the photon sphere of a Schwarzschild black hole ($\epsilon = 1/3$), the deviation increases to $\Delta g_t \approx 0.11$.
+
+
+\section{Lagrangian Formulation}
+\label{sec:lagrangian}
+
+The temporal field framework admits a formulation based on a variational principle. In this section, we construct the action and show that its variation yields both the field equation and the equation of motion.
+
+\subsection{Field Action}
+\label{sec:field_action}
+
+We define the field action as
+\begin{equation}
+S_\Phi = \int \left[ \frac{c^4}{8\pi G}(\nabla\Phi_t)^2 - \Phi_t\, T_{00} \right] d^3x\, dt ,
+\label{eq:field_action}
+\end{equation}
+where the first term represents the kinetic contribution of the temporal field and the second term describes its coupling to the energy density. Both terms have dimensions of energy density $[M L^{-1} T^{-2}]$, ensuring dimensional consistency.
+
+\subsection{Variation and Field Equation}
+\label{sec:field_variation}
+
+We require the action to be stationary under variations $\Phi_t \to \Phi_t + \delta\Phi_t$.
+
+The variation of the kinetic term is
+$$
+\delta \int \frac{c^4}{8\pi G}(\nabla\Phi_t)^2 \, d^3x\, dt
+= \frac{c^4}{4\pi G}\int (\nabla\Phi_t \cdot \nabla\delta\Phi_t)\, d^3x\, dt .
+$$
+
+Applying integration by parts,
+$$
+= -\frac{c^4}{4\pi G}\int (\nabla^2\Phi_t)\,\delta\Phi_t\, d^3x\, dt ,
+$$
+where boundary terms are discarded.
+
+The variation of the coupling term gives
+$$
+\delta \int \Phi_t\, T_{00}\, d^3x\, dt
+= \int T_{00}\,\delta\Phi_t\, d^3x\, dt .
+$$
+
+Requiring $\delta S_\Phi = 0$ for arbitrary $\delta\Phi_t$ yields
+\begin{equation}
+\nabla^2\Phi_t = -\frac{4\pi G}{c^4}T_{00} ,
+\label{eq:field_eq_var}
+\end{equation}
+which coincides with the field equation obtained in Section~\ref{sec:field_equation}.
+
+\subsection{Particle Action and Proper Time}
+\label{sec:particle_action}
+
+The action for a particle of rest mass $m$ is proportional to its proper time~\cite{Goldstein2002}:
+\begin{equation}
+S_p = -mc^2 \int d\tau .
+\label{eq:particle_action}
+\end{equation}
+
+From the effective metric Eq.~(\ref{eq:tff_metric}),
+$$
+ds^2 = -g_t^2(\mathbf{x})\, c^2 dt^2 + |d\mathbf{x}|^2 ,
+$$
+and the relation $ds^2 = -c^2 d\tau^2$, we obtain
+$$
+c^2 d\tau^2 = g_t^2(\mathbf{x})\, c^2 dt^2 - |d\mathbf{x}|^2 .
+$$
+
+The proper time is therefore
+\begin{equation}
+d\tau = \sqrt{g_t^2(\mathbf{x}) - \frac{v^2}{c^2}}\, dt ,
+\label{eq:proper_time_full}
+\end{equation}
+where $v = |d\mathbf{x}/dt|$ is the coordinate velocity.
+
+Substituting into Eq.~(\ref{eq:particle_action}), we obtain the exact Lagrangian
+\begin{equation}
+\mathcal{L} = -mc^2 \sqrt{g_t^2(\mathbf{x}) - \frac{v^2}{c^2}} ,
+\label{eq:lagrangian_exact}
+\end{equation}
+from which all dynamical quantities are derived in the following sections.
+
+\subsection{Variation and Equation of Motion}
+\label{sec:eom_variation}
+
+We define the relativistic factor
+\begin{equation}
+\tilde{\gamma} = \frac{1}{\sqrt{g_t^2(\mathbf{x}) - v^2/c^2}} ,
+\end{equation}
+which is positive and finite for all subluminal motion ($v^2 < g_t^2 c^2$). In the limit $g_t \to 1$, this reduces to the standard Lorentz factor
+$\gamma = (1 - v^2/c^2)^{-1/2}$.
+
+The equation of motion follows from the Euler--Lagrange equation~\cite{Goldstein2002}:
+$$
+\frac{d}{dt}\left(\frac{\partial \mathcal{L}}{\partial \mathbf{v}}\right)
+= \frac{\partial \mathcal{L}}{\partial \mathbf{x}} .
+$$
+
+The velocity derivative is
+$$
+\frac{\partial \mathcal{L}}{\partial \mathbf{v}}
+= m \tilde{\gamma}\, \mathbf{v} .
+$$
+
+The spatial derivative is
+$$
+\frac{\partial \mathcal{L}}{\partial \mathbf{x}}
+= -mc^2 g_t^2\, \tilde{\gamma}\, \mathbf{T} ,
+$$
+using $\nabla g_t = g_t \mathbf{T}$.
+
+The resulting equation of motion is
+\begin{equation}
+\frac{d}{dt}\left(m \tilde{\gamma}\, \mathbf{v}\right)
+= -mc^2 g_t^2\, \tilde{\gamma}\, \mathbf{T} .
+\label{eq:eom_main}
+\end{equation}
+
+This equation shows that the temporal field acts as an effective force proportional to $\mathbf{T}$, modulated by the relativistic factor $\tilde{\gamma}$ and the field strength $g_t^2$.
+
+Since the Lagrangian does not depend explicitly on $\theta$, rotational symmetry implies conservation of the associated conjugate momentum via Noether's theorem~\cite{Noether1918}. For motion in the $xy$-plane,
+\begin{equation}
+J = \frac{\partial \mathcal{L}}{\partial \dot{\theta}}
+= m \tilde{\gamma}\, r^2 \dot{\theta} = \text{const}.
+\label{eq:noether_charge}
+\end{equation}
+
+Whether the orbital quantity $L = r^2\dot{\theta}$ is independently conserved depends on the structure of the equation of motion and is determined in Section~\ref{sec:exact_eom}.
+
+\subsection{Weak-Field Limit}
+\label{sec:weak_field}
+
+In the weak-field and low-velocity regime, $g_t \approx 1$ and $v^2/c^2 \ll 1$. Expanding the Lagrangian Eq.~(\ref{eq:lagrangian_exact}) to leading order in $\Phi_t$ and $v^2/c^2$:
+$$
+\mathcal{L} = -mc^2\sqrt{(1 - \Phi_t)^2 - v^2/c^2}
+\approx -mc^2\sqrt{1 - 2\Phi_t - v^2/c^2} .
+$$
+
+Using $\sqrt{1 - \epsilon} \approx 1 - \epsilon/2$ with
+$\epsilon = 2\Phi_t + v^2/c^2$:
+$$
+\mathcal{L} \approx -mc^2 + mc^2\Phi_t + \frac{1}{2}mv^2 .
+$$
+
+Identifying $\Phi_N = -c^2\Phi_t$, we obtain
+$$
+\mathcal{L} \approx \frac{1}{2}mv^2 - m\Phi_N - mc^2 .
+$$
+
+Applying the Euler--Lagrange equation gives
+\begin{equation}
+m\mathbf{a} = -m\nabla\Phi_N ,
+\end{equation}
+which recovers Newtonian mechanics.
+
+
+\section{Equation of Motion}
+\label{sec:eom}
+
+In this section, we derive the equation of motion from the variational principle established in Section~\ref{sec:lagrangian}. Starting from the Euler--Lagrange equation, we obtain an exact relativistic expression and apply it to radially symmetric temporal fields.
+
+\subsection{Exact Equation of Motion}
+\label{sec:exact_eom}
+
+We expand the left-hand side of Eq.~(\ref{eq:eom_main}) using the product rule:
+$$
+\frac{d}{dt}(m \tilde{\gamma}\,\mathbf{v})
+= m \dot{\tilde{\gamma}}\,\mathbf{v}
++ m \tilde{\gamma}\,\mathbf{a} .
+$$
+
+The time derivative of $\tilde{\gamma}$ along the trajectory is computed from its definition. Since
+$$
+\tilde{\gamma} = (g_t^2 - v^2/c^2)^{-1/2} ,
+$$
+we obtain
+$$
+\dot{\tilde{\gamma}} = -\frac{1}{2}(g_t^2 - v^2/c^2)^{-3/2}
+\cdot \frac{d}{dt}(g_t^2 - v^2/c^2) .
+$$
+
+Using the chain rule $\dot{g}_t = \mathbf{v}\cdot\nabla g_t$ and Eq.~(\ref{eq:temporal_field_gt}),
+$$
+\frac{d}{dt}(g_t^2) = 2g_t\dot{g}_t = 2g_t^2(\mathbf{v}\cdot\mathbf{T}) ,
+\qquad
+\frac{d}{dt}(v^2/c^2) = \frac{2\mathbf{v}\cdot\mathbf{a}}{c^2} ,
+$$
+and therefore
+$$
+\dot{\tilde{\gamma}}
+= \tilde{\gamma}^3\left(\frac{\mathbf{v}\cdot\mathbf{a}}{c^2}
+  - g_t^2(\mathbf{v}\cdot\mathbf{T})\right) .
+$$
+
+Substituting into Eq.~(\ref{eq:eom_main}) and dividing by $m\tilde{\gamma}$,
+\begin{equation}
+\mathbf{a}
++ \frac{\tilde{\gamma}^2}{c^2}(\mathbf{v}\cdot\mathbf{a})\,\mathbf{v}
+= -c^2 g_t^2\,\mathbf{T}
+  + \tilde{\gamma}^2 g_t^2(\mathbf{v}\cdot\mathbf{T})\,\mathbf{v} .
+\label{eq:rel_implicit}
+\end{equation}
+
+To isolate $\mathbf{a}$, we take the dot product of both sides with $\mathbf{v}$:
+$$
+(\mathbf{v}\cdot\mathbf{a})\!\left(1 + \frac{\tilde{\gamma}^2 v^2}{c^2}\right)
+= g_t^2(\mathbf{v}\cdot\mathbf{T})
+  \left(\tilde{\gamma}^2 v^2 - c^2\right) .
+$$
+
+The two coefficients simplify using the identity $\tilde{\gamma}^2(g_t^2 - v^2/c^2) = 1$:
+$$
+1 + \frac{\tilde{\gamma}^2 v^2}{c^2} = g_t^2\,\tilde{\gamma}^2,
+\qquad
+\tilde{\gamma}^2 v^2 - c^2
+= \tilde{\gamma}^2(2v^2 - c^2 g_t^2) .
+$$
+
+Therefore,
+$$
+\mathbf{v}\cdot\mathbf{a}
+= (\mathbf{v}\cdot\mathbf{T})(2v^2 - c^2 g_t^2) .
+$$
+
+Substituting back into Eq.~(\ref{eq:rel_implicit}) and collecting the velocity-dependent terms,
+$$
+\tilde{\gamma}^2(\mathbf{v}\cdot\mathbf{T})\,\mathbf{v}
+\left[g_t^2 - \frac{2v^2 - c^2 g_t^2}{c^2}\right]
+= 2\tilde{\gamma}^2\!\left(g_t^2 - \frac{v^2}{c^2}\right)
+  (\mathbf{v}\cdot\mathbf{T})\,\mathbf{v}
+= 2\,(\mathbf{v}\cdot\mathbf{T})\,\mathbf{v} ,
+$$
+where the last step again uses $\tilde{\gamma}^2(g_t^2 - v^2/c^2) = 1$. This yields the exact equation of motion
+\begin{equation}
+\mathbf{a} = -c^2 g_t^2\,\mathbf{T}
+            + 2\,(\mathbf{v}\cdot\mathbf{T})\,\mathbf{v} .
+\label{eq:eom_exact}
+\end{equation}
+
+This result is exact within the Lagrangian of Eq.~(\ref{eq:lagrangian_exact}).
+
+\paragraph{Structure of $\tilde{\gamma}$.}
+The relativistic factor $\tilde{\gamma}$ unifies two distinct effects within a single expression:
+$$
+\tilde{\gamma}
+= \frac{1}{\sqrt{g_t^2 - v^2/c^2}} .
+$$
+
+When $g_t = 1$ (flat spacetime), $\tilde{\gamma}$ reduces to the standard Lorentz factor $\gamma = (1 - v^2/c^2)^{-1/2}$ of special relativity. When $v = 0$ (stationary observer), $\tilde{\gamma} = 1/g_t$, recovering the gravitational time dilation factor. In general, both effects are simultaneously present. The condition $v^2 < g_t^2 c^2$ defines the maximum speed accessible to a massive particle: $v_{\max} = g_t\, c < c$, consistent with the effective refractive index $n = 1/g_t$ established in Section~\ref{sec:lensing}.
+
+\paragraph{Physical interpretation.}
+The exact equation of motion separates into a field-driven term and a velocity-dependent correction:
+$$
+\mathbf{a} = -\Big(\underbrace{c^2 g_t^2\,\mathbf{T}}_{\text{field-driven}}
+  - \underbrace{2\,(\mathbf{v}\cdot\mathbf{T})\,\mathbf{v}}_{\text{velocity-dependent}}\Big) .
+$$
+
+The first term, $-c^2 g_t^2\,\mathbf{T}$, generalizes the Newtonian gravitational acceleration by incorporating the local gravitational time dilation through the factor $g_t^2 < 1$. The second term, $+2\,(\mathbf{v}\cdot\mathbf{T})\,\mathbf{v}$, is directed along the velocity and couples to the component of motion aligned with the temporal field. Its effect depends on the direction of motion: for a particle falling inward toward the central mass, this term opposes the inward velocity, producing a relativistic deceleration; for outward motion, it enhances the outward velocity.
+
+\subsection{Equation of Motion in a Radial Temporal Field}
+\label{sec:radial}
+
+We now apply the exact equation of motion to a spherically symmetric temporal field $\mathbf{T} = T(r)\hat{r}$ with $T(r) = GM/(c^2 r^2)$.
+
+In polar coordinates~\cite{Goldstein2002},
+$$
+\mathbf{v} = \dot{r}\hat{r} + r\dot{\theta}\hat{\theta}, \qquad
+v^2 = \dot{r}^2 + r^2\dot{\theta}^2, \qquad
+\mathbf{a} = (\ddot{r} - r\dot{\theta}^2)\hat{r}
+            + (r\ddot{\theta} + 2\dot{r}\dot{\theta})\hat{\theta}.
+$$
+
+\paragraph{Tangential component.}
+
+Since $\mathbf{T}$ is radial, the first term on the right-hand side of Eq.~(\ref{eq:eom_exact}) has no tangential component. The tangential equation is
+$$
+r\ddot{\theta} + 2\dot{r}\dot{\theta}
+= 2T(r)\dot{r}\cdot r\dot{\theta} .
+$$
+
+Defining $L = r^2\dot{\theta}$, this can be written as
+\begin{equation}
+\frac{dL}{dt} = 2T(r)\dot{r}\,L .
+\label{eq:dLdt}
+\end{equation}
+
+Using $d/dt = \dot{r}\,d/dr$, we obtain
+$$
+\frac{dL}{L} = 2T(r)\,dr ,
+$$
+with solution
+\begin{equation}
+L(r) = L_\infty \exp\!\left(-\frac{2GM}{c^2 r}\right) ,
+\label{eq:L_evolution}
+\end{equation}
+where $L_\infty$ is the angular momentum at infinity.
+
+The angular momentum $L = r^2\dot{\theta}$ is therefore not conserved. It decreases as the particle approaches the central mass, reflecting the velocity-dependent coupling in Eq.~(\ref{eq:eom_exact}). The conserved quantity is the Noether charge $J = m\tilde{\gamma}\,L$ established in Eq.~(\ref{eq:noether_charge}), which constrains the relationship between $L$ and $\tilde{\gamma}$ along the orbit.
+
+\paragraph{Radial component.}
+
+The radial equation is
+$$
+\ddot{r} - r\dot{\theta}^2 = -c^2 g_t^2\,T(r) + 2T(r)\dot{r}^2 .
+$$
+
+Substituting $r\dot{\theta}^2 = L^2/r^3$ and $T(r) = GM/(c^2 r^2)$,
+\begin{equation}
+\ddot{r} = \frac{L^2}{r^3} - \frac{GM}{r^2}\,g_t^2
+         + \frac{2GM}{c^2 r^2}\,\dot{r}^2 .
+\label{eq:radial_motion}
+\end{equation}
+
+The three terms admit a clear physical interpretation:
+\begin{itemize}
+\item the centrifugal acceleration, with $L$ varying according to Eq.~(\ref{eq:L_evolution}),
+\item the gravitational acceleration, modified by the factor $g_t^2(r) < 1$ that encodes gravitational time dilation,
+\item a relativistic correction arising from radial velocity, which opposes the gravitational attraction.
+\end{itemize}
+
+In the Newtonian limit, $L \to L_\infty$ and the relativistic correction vanishes, recovering the standard radial equation.
+
+
+\section{Physical Phenomena}
+\label{sec:phenomena}
+
+In this section, we apply the temporal field framework (TFF) to specific physical situations and compare the results with general relativity (GR). Each gravitational effect is decomposed into contributions attributable to the temporal structure, and the residual difference from GR is identified as a direct measure of the spatial curvature contribution.
+
+\subsection{Perihelion Precession}
+\label{sec:precession}
+
+\paragraph{Objective.}
+We compute the orbital perihelion precession within the temporal field framework and compare the result with general relativity and the PPN decomposition.
+
+\paragraph{Binet equation.}
+We derive the orbit equation from the radial equation of motion Eq.~(\ref{eq:radial_motion}):
+$$
+\ddot{r} = \frac{L^2}{r^3} - \frac{GM}{r^2}\,g_t^2
+         + \frac{2GM}{c^2 r^2}\,\dot{r}^2 .
+$$
+
+Introducing $u = 1/r$ and $\theta$ as the independent variable, the radial velocity becomes $\dot{r} = -L\, du/d\theta$. The radial acceleration is
+$$
+\ddot{r} = -L^2 u^2 \frac{d^2 u}{d\theta^2}
+         - \dot{L}\,\frac{du}{d\theta} .
+$$
+
+Using Eq.~(\ref{eq:dLdt}), $\dot{L} = 2T\dot{r}\,L$, and $L\,du/d\theta = -\dot{r}$, we obtain
+$$
+\ddot{r} = -L^2 u^2 \frac{d^2 u}{d\theta^2} + 2T\dot{r}^2 .
+$$
+
+Substituting into the radial equation, the velocity-dependent correction $2T\dot{r}^2$ cancels identically:
+$$
+-L^2 u^2 \frac{d^2 u}{d\theta^2} + 2T\dot{r}^2
+= L^2 u^3 - GM u^2 g_t^2 + 2T\dot{r}^2 ,
+$$
+yielding
+\begin{equation}
+\frac{d^2 u}{d\theta^2} + u = \frac{GM}{L^2}\,g_t^2 .
+\end{equation}
+
+The angular momentum varies with radius according to Eq.~(\ref{eq:L_evolution}):
+$$
+L(r) = L_\infty\,e^{-2\mu u}, \qquad \mu \equiv \frac{GM}{c^2} ,
+$$
+so that $L^{-2} = L_\infty^{-2}\,e^{4\mu u}$. With $g_t = e^{-\mu u}$, the factors combine to give the Binet equation
+$$
+\frac{d^2 u}{d\theta^2} + u
+= \frac{GM}{L_\infty^2}\,e^{2\mu u} .
+\label{eq:binet_tff}
+$$
+
+The exponential factor $e^{2\mu u}$ arises from two competing temporal effects: the local weakening of gravity ($g_t^2 = e^{-2\mu u}$) reduces the gravitational source, while the non-conservation of orbital angular momentum ($L^{-2} = L_\infty^{-2}\,e^{4\mu u}$) amplifies it by a larger factor. The net product enhances the gravitational source by $e^{2\mu u}$, which increases the attraction at small radii. Note that the centrifugal barrier remains the Newtonian $+u$ on the left-hand side, unaffected by the variation of $L$, since the $L^2$ dependence cancels in the derivation of the Binet equation.
+
+\paragraph{Perihelion precession.}
+The zeroth-order (Keplerian) solution satisfies
+$$
+\frac{d^2 u_0}{d\theta^2} + u_0 = \frac{GM}{L_\infty^2}
+\equiv \frac{1}{p} ,
+$$
+where $p = a(1-e_{\rm ecc}^2)$ is the semi-latus rectum. The Kepler
+orbit is
+$$
+u_0(\theta) = \frac{1}{p}\,(1 + e_{\rm ecc}\cos\theta) .
+$$
+
+Expanding the exponential to first order in $\mu u$,
+$$
+e^{2\mu u} \approx 1 + 2\mu u ,
+$$
+the perturbed equation becomes
+$$
+\frac{d^2 u}{d\theta^2} + \left(1 - \frac{2\mu}{p}\right)u
+= \frac{1}{p} .
+$$
+
+The oscillation frequency is
+$$
+\omega = \sqrt{1 - \frac{2\mu}{p}} \approx 1 - \frac{\mu}{p} ,
+$$
+and the perihelion advance per orbit is
+\begin{equation}
+\Delta\phi_{\text{TFF}}
+= 2\pi\!\left(\frac{1}{\omega} - 1\right)
+= \frac{2\pi\mu}{p}
+= +\frac{2\pi GM}{c^2\, a(1-e_{\rm ecc}^2)} .
+\label{eq:precession_tff}
+\end{equation}
+
+The positive sign indicates prograde precession: the perihelion advances in the direction of orbital motion.
+
+\paragraph{Comparison with general relativity.}
+The corresponding GR result is
+\begin{equation}
+\Delta\phi_{\text{GR}}
+= \frac{6\pi GM}{c^2\, a(1-e_{\rm ecc}^2)} .
+\end{equation}
+
+In the PPN formalism~\cite{Will2014}, the perihelion advance is
+\begin{equation}
+\Delta\phi_{\text{PPN}}
+= \frac{2 + 2\gamma - \beta}{3}
+  \cdot\frac{6\pi GM}{c^2\,a(1-e_{\rm ecc}^2)} ,
+\end{equation}
+where $\gamma$ encodes the spatial curvature contribution and $\beta$ encodes the nonlinearity of the temporal sector. GR corresponds to $\gamma = 1$, $\beta = 1$, giving the full result $6\pi GM/(c^2\,a(1-e_{\rm ecc}^2))$.
+
+The TFF result corresponds to $\gamma = 0$, $\beta = 1$,
+$$
+\Delta\phi_{\text{TFF}}
+= \frac{1}{3}
+  \cdot\frac{6\pi GM}{c^2\,a(1-e_{\rm ecc}^2)} ,
+$$
+selecting the purely temporal contribution. The ratio
+\begin{equation}
+\frac{\Delta\phi_{\text{TFF}}}{\Delta\phi_{\text{GR}}} = \frac{1}{3}
+\end{equation}
+quantifies the fraction of the GR precession attributable to temporal structure. The remaining two-thirds, corresponding to the spatial curvature contribution ($\gamma = 1$), is absent by construction.
+
+\paragraph{Quantitative comparison with observation.}
+For Mercury, using MESSENGER data~\cite{Park2017}:
+\begin{center}
+\begin{tabular}{lc}
+\hline
+GR prediction & $+42.98$ arcsec/century \\
+TFF prediction & $+14.33$ arcsec/century \\
+Observation & $+43.11 \pm 0.45$ arcsec/century \\
+\hline
+\end{tabular}
+\end{center}
+
+\paragraph{Physical interpretation.}
+The prograde precession arises from the gravitational enhancement encoded in the Binet equation Eq.~(\ref{eq:binet_tff}). The factor $e^{2\mu u}$ is the net result of two opposing temporal effects: gravitational time dilation weakens gravity at small radii ($g_t^2 = e^{-2\mu u}$), while the variation of $L$ ($L^{-2} \propto e^{4\mu u}$) enhances the effective gravitational source by a larger factor. The net enhancement produces prograde precession at one-third of the GR magnitude. In general relativity, spatial curvature provides an additional enhancement of twice the magnitude, yielding the full GR result. The ratio $1/3$ quantifies the relative weight of the temporal contribution, and its agreement with the PPN decomposition confirms that the temporal field framework correctly isolates the temporal sector of gravitational dynamics.
+
+\subsection{Gravitational Lensing}
+\label{sec:lensing}
+
+\paragraph{Objective.}
+We derive the light deflection angle directly from the TFF metric and Fermat's principle, without invoking the spatial curvature contribution from GR.
+
+\paragraph{Refractive index.}
+The TFF metric Eq.~(\ref{eq:tff_metric}),
+$$
+ds^2 = -g_t^2(\mathbf{x})\, c^2 dt^2 + |d\mathbf{x}|^2 ,
+$$
+implies, under the null condition $ds^2 = 0$,
+$$
+dl = g_t(\mathbf{x})\, c\, dt ,
+$$
+so the coordinate light speed becomes
+$$
+c_{\text{coord}} = g_t(\mathbf{x})\, c .
+$$
+
+Thus the effective refractive index is
+\begin{equation}
+n = \frac{c}{c_{\text{coord}}} = \frac{1}{g_t} .
+\end{equation}
+
+In the weak-field limit,
+\begin{equation}
+n \approx 1 + \frac{GM}{c^2 r} .
+\end{equation}
+
+\paragraph{Deflection angle.}
+Using Fermat’s principle~\cite{Bartelmann2010}, the deflection angle is
+\begin{equation}
+\delta\theta = \int_{-\infty}^{\infty} \frac{b}{r}\frac{dn}{dr}\,dx, \qquad r = \sqrt{b^2 + x^2} .
+\end{equation}
+
+With
+$$
+\frac{dn}{dr} = -\frac{GM}{c^2 r^2} ,
+$$
+we obtain
+$$
+\delta\theta = -\frac{GMb}{c^2}\int_{-\infty}^{\infty}\frac{dx}{(b^2+x^2)^{3/2}} = -\frac{GMb}{c^2}\cdot\frac{2}{b^2} .
+$$
+
+Taking the absolute value gives
+\begin{equation}
+\delta\theta_{\text{TFF}} = \frac{2GM}{c^2 b} .
+\label{eq:deflection_tff}
+\end{equation}
+
+\paragraph{Comparison with general relativity.}
+GR predicts
+\begin{equation}
+\delta\theta_{\text{GR}} = \frac{4GM}{c^2 b} .
+\end{equation}
+
+Therefore,
+\begin{equation}
+\frac{\delta\theta_{\text{TFF}}}{\delta\theta_{\text{GR}}} = \frac{1}{2} .
+\end{equation}
+
+\paragraph{Quantitative comparison with observation.}
+For the Sun, using the 1919 eclipse observations~\cite{Dyson1920}:
+\begin{center}
+\begin{tabular}{lc}
+\hline
+GR prediction & $1.75$ arcsec \\
+TFF prediction & $0.875$ arcsec \\
+Observation & $1.75 \pm 0.02$ arcsec \\
+\hline
+\end{tabular}
+\end{center}
+
+\paragraph{Physical interpretation.}
+In GR, the full deflection arises from equal contributions of temporal ($g_{00}$) and spatial ($g_{rr}$) components. The TFF result isolates only the temporal contribution, yielding exactly one-half of the total GR value. The remaining $50\%$ is therefore a direct and quantitative measure of the spatial curvature contribution to light bending. In the PPN framework, this corresponds to $\gamma_{\text{TFF}} = 0$, whereas GR predicts $\gamma = 1$. The current observational bound $|\gamma - 1| < 2.3 \times 10^{-5}$ from Cassini tracking~\cite{Bertotti2003} quantifies the precision with which spatial curvature has been confirmed.
+
+\subsection{Gravitational Redshift}
+\label{sec:redshift}
+
+\paragraph{Objective.}
+We compute the gravitational redshift within the temporal field framework and compare it with the general relativistic result.
+
+\paragraph{Calculation.}
+The proper time rate at position $\mathbf{x}$ is determined by Eq.~(\ref{eq:proper_time}):
+$$
+d\tau = g_t(\mathbf{x})\, dt .
+$$
+
+For a photon of frequency $\nu$ measured by a local observer, the number of oscillations is invariant along the path. The frequency observed at positions $r_1$ and $r_2$ satisfies
+\begin{equation}
+\frac{\nu_1}{\nu_2} = \frac{g_t(r_2)}{g_t(r_1)} .
+\end{equation}
+
+For a spherically symmetric mass, Eq.~(\ref{eq:gt_spherical}) gives
+$$
+g_t(r) = \exp\left(-\frac{GM}{c^2 r}\right) ,
+$$
+yielding
+$$
+\frac{\nu_1}{\nu_2}
+= \exp\left[\frac{GM}{c^2}\left(\frac{1}{r_1} - \frac{1}{r_2}\right)\right] .
+$$
+
+In the weak-field limit, this becomes
+\begin{equation}
+\frac{\nu_1}{\nu_2}
+\approx 1 + \frac{GM}{c^2}\left(\frac{1}{r_1} - \frac{1}{r_2}\right) .
+\end{equation}
+
+\paragraph{Comparison with general relativity.}
+In general relativity, the gravitational redshift for a static observer in the Schwarzschild metric is
+\begin{equation}
+\frac{\nu_1}{\nu_2}
+= \sqrt{\frac{1 - 2GM/(c^2 r_2)}{1 - 2GM/(c^2 r_1)}}
+\approx 1 + \frac{GM}{c^2}\left(\frac{1}{r_1} - \frac{1}{r_2}\right) .
+\end{equation}
+
+The leading-order expressions are identical. This confirms that the gravitational redshift is captured entirely by the temporal sector, with no contribution from spatial curvature at this order.
+
+\paragraph{Physical interpretation.}
+The redshift depends only on the ratio of $g_t$ at two locations, which is a purely temporal quantity. The Euclidean spatial geometry has no effect on the result, consistent with the observation that redshift arises from $g_{00}$ alone in general relativity. This confirms that gravitational redshift is the one phenomenon in the framework that requires no spatial contribution whatsoever, and that its exact reproduction within TFF is not coincidental but reflects its fundamentally temporal origin.
+
+\paragraph{Quantitative comparison with observation.} 
+The gravitational redshift has been confirmed experimentally by Pound and Rebka~\cite{Pound1959}, with subsequent measurements achieving precision at the $10^{-4}$ level~\cite{Pound1965}. Both TFF and GR reproduce the observed value at leading order.
+
+\subsection{Shapiro Time Delay}
+\label{sec:shapiro}
+
+\paragraph{Objective.}
+We compute the Shapiro time delay within the temporal field framework and compare it with the corresponding result in general relativity.
+
+\paragraph{Calculation.}
+The coordinate travel time of a signal along a spatial path in the TFF metric is given by
+\begin{equation}
+t = \frac{1}{c}\int \frac{dl}{g_t(\mathbf{x})} \approx \frac{1}{c}\int\left(1 + \frac{GM}{c^2 r}\right)dl .
+\end{equation}
+
+The excess time delay relative to flat spacetime is therefore
+$$
+\Delta t_{\text{TFF}} = \frac{GM}{c^3}\int \frac{dl}{r} .
+$$
+
+For a light ray passing a central mass $M$ with closest approach $r_0$, we parameterize the trajectory as $r = \sqrt{r_0^2 + x^2}$. In this case, the time delay becomes
+\begin{equation}
+\Delta t_{\text{TFF}} = \frac{2GM}{c^3}\operatorname{arcsinh}\left(\frac{X}{r_0}\right) ,
+\label{eq:shapiro_tff}
+\end{equation}
+where $X$ denotes the integration cutoff along the propagation direction.
+
+\paragraph{Comparison with general relativity.}
+The corresponding GR result is given by~\cite{Shapiro1964},~\cite{Bertotti2003}
+\begin{equation}
+\Delta t_{\text{GR}} = \frac{2GM}{c^3}\ln\left(\frac{4r_1 r_2}{r_0^2}\right) ,
+\label{eq:shapiro_gr}
+\end{equation}
+where $r_1$ and $r_2$ represent the distances from the mass to the source and observer, respectively.
+
+To enable a direct comparison, we express the TFF result in the same geometric configuration as the GR formula. For a signal propagating from a source at distance $r_1$ to an observer at distance $r_2$ from the central mass, with closest approach $r_0$, the TFF time delay becomes
+$$
+\Delta t_{\text{TFF}}
+= \frac{GM}{c^3}\left[
+  \operatorname{arcsinh}\!\left(\frac{r_1}{r_0}\right)
++ \operatorname{arcsinh}\!\left(\frac{r_2}{r_0}\right)
+\right] .
+$$
+
+In the regime $r_1, r_2 \gg r_0$, which is well satisfied in all solar-system experiments ($r_i/r_0 \gtrsim 200$), the approximation $\operatorname{arcsinh}(x) \approx \ln(2x)$ applies, and the expression reduces to
+$$
+\Delta t_{\text{TFF}}
+\approx \frac{GM}{c^3}\ln\!\left(\frac{4\,r_1\,r_2}{r_0^2}\right) .
+\label{eq:shapiro_tff_log}
+$$
+
+This has the same functional form as the GR result Eq.~(\ref{eq:shapiro_gr}), allowing a direct comparison:
+\begin{equation}
+\frac{\Delta t_{\text{TFF}}}{\Delta t_{\text{GR}}}
+= \frac{1}{2} .
+\end{equation}
+
+The TFF therefore yields one-half of the GR Shapiro delay, consistent with the PPN parameter $\gamma = 0$ and the equal temporal and spatial contributions identified for light deflection.
+
+\paragraph{Physical interpretation.}
+The Shapiro delay, like light deflection, receives equal contributions from temporal and spatial geometry: the temporal sector alone produces $50\%$ of the GR result, and the remaining $50\%$ arises from spatial curvature. This parallels the light deflection result (Section~\ref{sec:lensing}), where the same $50/50$ decomposition was identified. In the PPN formalism, both effects are governed by the same parameter $\gamma$, confirming that spatial curvature enters both phenomena with equal weight. The TFF formulation isolates the temporal contribution within a Euclidean spatial background, making this decomposition explicit.
+
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+\subsection{Summary of Derived Results}
+\label{sec:summary}
+
+We have constructed a self-contained framework for gravitational physics based on a single scalar field, the temporal degree of freedom
+$$
+g_t = \frac{d\tau}{dt},
+$$
+defined on Euclidean spatial slices. From this field, we derived the temporal potential $\Phi_t = -\ln g_t$ and the temporal field
+$\mathbf{T} = -\nabla \Phi_t$.
+
+The spatial structure of the temporal field is governed by a Gauss-type field equation
+$$
+\nabla \cdot \mathbf{T} = \frac{4\pi G}{c^4} T_{00},
+$$
+which relates the temporal field to the energy-momentum distribution. Both the field equation and the equation of motion
+$$
+\mathbf{a} = -c^2 g_t^2\,\mathbf{T}
+  + 2\,(\mathbf{v}\cdot\mathbf{T})\,\mathbf{v}
+$$
+are derived from a single variational principle based on the action
+$$
+S = \int \left[ \frac{c^4}{8\pi G} (\nabla \Phi_t)^2
+  - \Phi_t \, T_{00} \right] d^3x\, dt
+- m c^2 \int \sqrt{g_t^2 - \frac{v^2}{c^2}} \, dt.
+$$
+
+For a spherically symmetric mass distribution, the temporal degree of freedom takes the form
+$$
+g_t(r) = \exp\left(-\frac{GM}{c^2 r}\right),
+$$
+which reproduces the Newtonian limit exactly and agrees with the Schwarzschild solution to first order in $GM/(c^2 r)$.
+
+\subsection{Decomposition of Gravitational Effects}
+\label{sec:decomposition}
+
+The framework can be interpreted as isolating the temporal component of general relativity while fixing the spatial metric to a Euclidean form. This restriction enables a quantitative decomposition of gravitational effects into temporal and spatial contributions.
+
+\begin{center}
+\small
+\begin{tabular}{lccc}
+\hline
+Effect & Temporal & Spatial & GR \\
+\hline
+Perihelion precession & prograde $1/3$ & prograde $2/3$ & $100\%$ \\
+Light deflection & $50\%$ & $50\%$ & $100\%$ \\
+Gravitational redshift & $100\%$ & $0\%$ & $100\%$ \\
+Shapiro time delay & $50\%$ & $50\%$ & $100\%$ \\
+\hline
+\end{tabular}
+\end{center}
+
+The table reveals a structured pattern. Perihelion precession demonstrates the strongest spatial sensitivity: the temporal sector alone produces prograde precession at one-third of the GR magnitude, and spatial curvature amplifies this to the full GR value. Light deflection and Shapiro time delay receive equal contributions from temporal and spatial components, a result consistent with the PPN parameter $\gamma = 0$ isolating the temporal sector. Gravitational redshift agrees with general relativity to leading order, confirming that this effect is purely temporal in origin.
+
+\subsection{The Role of Spatial Curvature}
+\label{sec:spatial_curvature}
+
+The quantitative differences between the temporal-field framework and general relativity are not internal inconsistencies but direct measures of the spatial contribution to each effect.
+
+\begin{itemize}
+\item \textbf{Perihelion precession.}
+The temporal sector yields prograde precession of magnitude $2\pi GM/[c^2\, a(1-e^2)]$, while GR predicts prograde precession of magnitude $6\pi GM/[c^2\, a(1-e^2)]$. The factor of three quantifies the spatial contribution: it amplifies the temporal contribution by a factor of two. For Mercury, this corresponds to $+14.33$ arcsec/century (temporal) versus $+42.98$ arcsec/century (GR), compared with the observed $43.11 \pm 0.45$ arcsec/century~\cite{Park2017}.
+
+\item \textbf{Light deflection.}
+The temporal prediction is $2GM/(c^2 b)$, exactly one-half of the GR result $4GM/(c^2 b)$. The spatial contribution is equal in magnitude, consistent with the well-known decomposition in which $g_{00}$ and $g_{rr}$ contribute equally to the deflection angle. For the Sun, this corresponds to $0.875$ arcsec (temporal) versus $1.75$ arcsec (GR), compared with the observed $1.75 \pm 0.02$ arcsec~\cite{Dyson1920}.
+
+\item \textbf{Shapiro time delay.}
+The temporal prediction is one-half of the GR value, consistent with the same $50/50$ temporal-spatial decomposition identified for light deflection. In the large-distance limit applicable to solar-system experiments, the TFF result $\Delta t_{\text{TFF}} \approx (GM/c^3)\ln(4r_1 r_2/r_0^2)$ has the same functional form as the GR result $\Delta t_{\text{GR}} = (2GM/c^3)\ln(4r_1 r_2/r_0^2)$, with the factor of two directly quantifying the spatial curvature contribution.
+\end{itemize}
+
+These results demonstrate that the temporal-field framework serves as a diagnostic tool: by systematically removing the spatial contribution, it reveals the magnitude and character of spatial curvature's role in each gravitational phenomenon.
+
+\subsection{Relation to Prior Work}
+\label{sec:prior_work}
+
+The temporal field framework lies conceptually between Nordstr\"om's scalar theories~\cite{Nordstrom1912},~\cite{Nordstrom1913} and general relativity~\cite{Einstein1915}. Nordstr\"om's second theory~\cite{Nordstrom1913}, which satisfies the equivalence principle, successfully reproduces gravitational redshift but yields a retrograde perihelion precession opposite to the observed advance, and fails to reproduce light deflection entirely. The present framework improves on both results: it predicts prograde perihelion precession in the correct direction at one-third of the GR magnitude, and it yields light deflection and Shapiro time delay at one-half of the GR values, identifying the temporal contribution to each effect. The reproduction of gravitational redshift to leading order confirms that this effect is purely temporal, consistent with its dependence on $g_{00}$ alone in general relativity.
+
+The PPN formalism~\cite{Will2014} decomposes post-Newtonian deviations from Newtonian gravity using free parameters ($\gamma$, $\beta$) that are determined by observation. The temporal field framework provides a complementary decomposition: by enforcing a Euclidean spatial geometry ($\gamma = 0$), the spatial contribution is removed by construction rather than by parameter fitting. The results are numerically identical---perihelion precession at one-third of the GR value, light deflection and Shapiro time delay at one-half---but the decomposition principle is structural rather than empirical. In this sense, the temporal field framework can be understood as providing a first-principles realization of the $\gamma = 0$ sector of the PPN decomposition, with no free parameters.
+
+The approach is also related to effective metric formulations such as Gordon's optical metric~\cite{Gordon1923}, and more broadly to modified gravity models~\cite{Clifton2012}. Its defining feature is the explicit separation of temporal dynamics from spatial geometry by enforcing a Euclidean spatial background.
+
+\subsection{Future Directions}
+\label{sec:future_directions}
+
+Several directions naturally extend the present work:
+
+\begin{itemize}
+\item \textbf{Time-dependent configurations.}
+Extensions to non-static spacetimes would require replacing the Laplacian with a covariant wave operator, opening the framework to cosmological applications and dynamical gravitational fields.
+
+\item \textbf{Gravitational waves.}
+The temporal field modification affects the effective potential and orbital dynamics of compact binaries, potentially producing detectable imprints on gravitational wave phase evolution~\cite{Abbott2016}.
+
+\item \textbf{Spatial degrees of freedom.}
+Relaxing the Euclidean spatial ansatz and introducing spatial metric components may restore full agreement with general relativity, completing the decomposition by reintroducing the spatial contributions identified in Section~\ref{sec:decomposition}.
+
+\item \textbf{Strong-field regime.}
+The framework predicts a $4\%$ deviation from the Schwarzschild $g_t$ at typical neutron star compactness ($\epsilon \approx 0.2$), increasing to $11\%$ near the photon sphere. Whether these deviations can be probed via precision spectroscopy or timing observations---current neutron star mass--radius measurements achieve $\sim$10--20\% precision~\cite{Ozel2016}---is an open observational question.
+\end{itemize}
+
+In summary, the temporal field framework provides a structured decomposition of gravitational physics into temporal and spatial contributions. While it does not replace general relativity, it offers a controlled setting in which the role of spatial curvature can be quantitatively isolated, measured, and compared across different gravitational phenomena.
+
+\vspace{1em}
+\noindent\textbf{Acknowledgements}
+
+\vspace{0.5em}
+\noindent The author developed the overall theoretical framework and takes full responsibility for the content of this work. AI-based tools were employed to assist in certain analytical derivations, as well as for language refinement and manuscript preparation.
+
+\begin{thebibliography}{99}
+
+%% ============================================================
+%% 기존 항목
+%% ============================================================
+
+\bibitem{Einstein1915}
+A.~Einstein,
+``Die Feldgleichungen der Gravitation,''
+\textit{Sitzungsberichte der K\"oniglich Preu{\ss}ischen Akademie der
+Wissenschaften zu Berlin},
+844--847 (1915).
+
+\bibitem{Dyson1920}
+F.~W.~Dyson, A.~S.~Eddington, and C.~Davidson,
+``A determination of the deflection of light by the Sun's gravitational
+field from observations made at the total eclipse of May 29, 1919,''
+\textit{Philosophical Transactions of the Royal Society A}
+\textbf{220}, 291--333 (1920).
+
+\bibitem{Pound1959}
+R.~V.~Pound and G.~A.~Rebka,
+``Gravitational red-shift in nuclear resonance,''
+\textit{Physical Review Letters} \textbf{3}, 439--441 (1959).
+
+\bibitem{Shapiro1964}
+I.~I.~Shapiro,
+``Fourth test of general relativity,''
+\textit{Physical Review Letters} \textbf{13}, 789--791 (1964).
+
+\bibitem{Pound1965}
+R.~V.~Pound and J.~L.~Snider,
+``Effect of Gravity on Gamma Radiation,''
+\textit{Physical Review Letters} \textbf{14}, 33--35 (1965).
+
+\bibitem{Abbott2016}
+B.~P.~Abbott et al.\ (LIGO Scientific Collaboration and Virgo
+Collaboration),
+``Observation of gravitational waves from a binary black hole merger,''
+\textit{Physical Review Letters} \textbf{116}, 061102 (2016).
+
+\bibitem{Will2014}
+C.~M.~Will,
+``The Confrontation between General Relativity and Experiment,''
+\textit{Living Reviews in Relativity} \textbf{17}, 4 (2014).
+
+\bibitem{Bartelmann2010}
+M.~Bartelmann,
+``Gravitational Lensing,''
+\textit{Classical and Quantum Gravity} \textbf{27}, 233001 (2010).
+
+\bibitem{Clifton2012}
+T.~Clifton, P.~G.~Ferreira, A.~Padilla, and C.~Skordis,
+``Modified Gravity and Cosmology,''
+\textit{Physics Reports} \textbf{513}, 1--189 (2012).
+
+%% ============================================================
+%% NEW: 스칼라 중력 역사 (차별화용)
+%% ============================================================
+
+\bibitem{Nordstrom1912}
+G.~Nordstr\"om,
+``Relativit\"atsprinzip und Gravitation,''
+\textit{Physikalische Zeitschrift} \textbf{13}, 1126--1129 (1912).
+
+\bibitem{Nordstrom1913}
+G.~Nordstr\"om,
+``Zur Theorie der Gravitation vom Standpunkt des
+Relativit\"atsprinzips,''
+\textit{Annalen der Physik} \textbf{347}, 533--554 (1913).
+
+\bibitem{Brans1961}
+C.~Brans and R.~H.~Dicke,
+``Mach's Principle and a Relativistic Theory of Gravitation,''
+\textit{Physical Review} \textbf{124}, 925--935 (1961).
+
+%% ============================================================
+%% NEW: Effective metric / 스칼라장 빛 전파
+%% ============================================================
+
+\bibitem{Gordon1923}
+W.~Gordon,
+``Zur Lichtfortpflanzung nach der Relativit\"atstheorie,''
+\textit{Annalen der Physik} \textbf{377}, 421--456 (1923).
+
+%% ============================================================
+%% NEW: GR 표준 교재
+%% ============================================================
+
+\bibitem{MTW1973}
+C.~W.~Misner, K.~S.~Thorne, and J.~A.~Wheeler,
+\textit{Gravitation},
+W.~H.~Freeman, San Francisco, 1973.
+
+\bibitem{Wald1984}
+R.~M.~Wald,
+\textit{General Relativity},
+University of Chicago Press, Chicago, 1984.
+
+%% ============================================================
+%% NEW: 해석역학 표준 교재 (Binet 방정식, Noether 정리)
+%% ============================================================
+
+\bibitem{Goldstein2002}
+H.~Goldstein, C.~Poole, and J.~Safko,
+\textit{Classical Mechanics},
+3rd ed., Addison-Wesley, San Francisco, 2002.
+
+%% ============================================================
+%% NEW: Schwarzschild 해
+%% ============================================================
+
+\bibitem{Schwarzschild1916}
+K.~Schwarzschild,
+``\"Uber das Gravitationsfeld eines Massenpunktes nach der
+Einsteinschen Theorie,''
+\textit{Sitzungsberichte der K\"oniglich Preu{\ss}ischen Akademie der
+Wissenschaften zu Berlin},
+189--196 (1916).
+
+%% ============================================================
+%% NEW: Noether 정리
+%% ============================================================
+
+\bibitem{Noether1918}
+E.~Noether,
+``Invariante Variationsprobleme,''
+\textit{Nachrichten von der Gesellschaft der Wissenschaften zu
+G\"ottingen, Mathematisch-Physikalische Klasse},
+235--257 (1918).
+
+%% ============================================================
+%% NEW: 빛 편향 정밀 측정 (Cassini)
+%% ============================================================
+
+\bibitem{Bertotti2003}
+B.~Bertotti, L.~Iess, and P.~Tortora,
+``A test of general relativity using radio links with the Cassini
+spacecraft,''
+\textit{Nature} \textbf{425}, 374--376 (2003).
+
+%% ============================================================
+%% NEW: 수성 근일점 세차운동 정밀 측정
+%% ============================================================
+
+\bibitem{Park2017}
+R.~S.~Park et al.,
+``Precession of Mercury's Perihelion from Ranging to the MESSENGER
+Spacecraft,''
+\textit{The Astronomical Journal} \textbf{153}, 121 (2017).
+
+%% ============================================================
+%% NEW: NS 질량/반경 측정 정밀도 종합 리뷰
+%% ============================================================
+
+\bibitem{Ozel2016}
+F.~\"Ozel and P.~Freire,
+``Masses, Radii, and the Equation of State of Neutron Stars,''
+\textit{Annual Review of Astronomy and Astrophysics}
+\textbf{54}, 401--440 (2016).
+
+\end{thebibliography}
+
+\end{document}
