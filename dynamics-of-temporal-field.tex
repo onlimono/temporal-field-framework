@@ -1,0 +1,284 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\geometry{margin=1in}
+
+\title{Dynamics of the Temporal Field: Compression, Radiation, and Stellar Fate}
+
+\author{Yongsu Gwak\\[6pt]\normalsize Independent Researcher\\[2pt]\normalsize\texttt{onlimono@gmail.com}}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+We generalize the temporal field framework from the static to the dynamic regime, building on both the original Euclidean formulation and its extension to curved spatial geometry. The paper makes two contributions. First, we derive the complete equation of motion for particles in the dynamic temporal field, incorporating both spatial curvature and explicit time dependence. The equation of motion decomposes into two independent effects: spatial curvature modifies the field coupling and doubles the velocity coupling, while time dependence introduces a new term directed along the particle velocity. Second, we identify a black-hole threshold $\Phi_t^*$ that separates two modes of gravitational evolution: black-hole collapse and stellar dissolution. The dynamic field equation yields an intrinsic logarithmic compression of the temporal potential, $\Phi_t = 2\ln\frac{|t - t_0|}{\tau} + C$, which competes with radiative energy loss encoded in the radiation escape curve $\Phi_t^{\rm rad}(t)$. No choice of radiative loss can hold the temporal potential constant: stable stellar configurations do not exist in this framework. When $\Phi_t$ reaches $\Phi_t^*$, radiation can no longer escape the gravitational well and black-hole collapse becomes inevitable; below $\Phi_t^*$, radiative energy loss drives progressive expansion and dissolution. In the weak-field limit, the threshold can be estimated as $\Phi_t^* = W(2)/4 \approx 0.213$, within the compactness range of neutron stars ($\Phi_t \sim 0.1$--$0.3$). The apparent stability of stars is an artifact of the observational timescale. Neutron stars serve as the decisive test of this framework.
+
+\end{abstract}
+
+\noindent\textbf{Keywords:} gravitation; scalar field; gravitational radiation; gravitational collapse
+
+
+\section{Introduction}
+\label{sec:intro}
+
+A self-consistent framework for decomposing gravitational effects into temporal and spatial contributions has been developed by enforcing Euclidean spatial geometry~\cite{Gwak2026a}. In this framework, the full gravitational dynamics are attributed to a single scalar field $g_t(\mathbf{x})$ that encodes the local scaling of proper time relative to coordinate time, $d\tau = g_t\,dt$, while the spatial metric remains fixed as the Euclidean metric $\delta_{ij}$. The framework reproduces Newtonian gravity exactly and enables a quantitative decomposition of gravitational effects: perihelion precession at one-third, light deflection and Shapiro time delay at one-half, and gravitational redshift to leading order of the general relativistic values.
+
+This framework was subsequently extended by introducing spatial curvature through a causal mechanism~\cite{Gwak2026b}. The coupling between the temporal field and spatial curvature is uniquely determined by the symmetry condition that the temporal and spatial factors in the coordinate speed of light be equal, a condition motivated by the causal structure of light propagation in general relativity~\cite{Hawking1973}. The resulting exact metric,
+$$
+ds^2 = -e^{-2\Phi_t}\,c^2\,dt^2 + e^{2\Phi_t}\,\delta_{ij}\,dx^i\,dx^j,
+\label{eq:exact_metric}
+$$
+is determined entirely by the single temporal potential $\Phi_t = -\ln g_t$ with no free parameters. The complete nonlinear field equation incorporates the spatial curvature self-consistently through both a nonlinear gradient term and an exponential source amplification. In the weak-field limit, this equation reproduces the linearized field equation of the earlier framework, and the exact symmetry condition yields the PPN parameter $\gamma = 1$, in agreement with general relativity~\cite{Will2014}.
+
+However, both the original and extended analyses are restricted to the static regime, in which the temporal potential satisfies $\partial\Phi_t/\partial t = 0$. This assumption is adequate for gravitational phenomena in the solar system, where the dominant source---the Sun---is effectively stationary. Nevertheless, there exist physically important scenarios in which the temporal field varies in time: stellar contraction during late-stage evolution, gravitational collapse of compact objects, and the long-term stability of self-gravitating configurations. For these phenomena, the static assumption must be relaxed.
+
+In this paper, we generalize the temporal field framework to the dynamic regime. The paper makes two contributions. First, we derive the complete equation of motion for particles in the dynamic temporal field, incorporating both spatial curvature and explicit time dependence. This fills a gap left by the static analyses, where the equation of motion was restricted to the Euclidean spatial metric~\cite{Gwak2026a}. Second, we identify a black-hole threshold $\Phi_t^*$ that separates two modes of gravitational evolution: black-hole collapse and stellar dissolution. This threshold emerges from the competition between logarithmic compression of the temporal potential and radiative energy loss, absent from the static framework.
+
+The paper is organized as follows. In Section~\ref{sec:dynamic_field}, we derive the dynamic nonlinear field equation and verify recovery of the static limit. In Section~\ref{sec:complete_eom}, we derive the complete equation of motion and decompose it into spatial-curvature and time-dependence effects. In Section~\ref{sec:stellar_fate}, we analyze the competition between logarithmic compression and radiative energy loss, derive the black-hole threshold $\Phi_t^*$, and establish the two modes of stellar fate. We conclude in Section~\ref{sec:conclusion}.
+
+
+\section{Dynamic Field Equation}
+\label{sec:dynamic_field}
+
+The static temporal field framework with spatial curvature is governed by the nonlinear field equation~\cite{Gwak2026b},
+\begin{equation}
+\nabla^2\Phi_t + \frac{1}{2}|\nabla\Phi_t|^2 = -\rho_t\,e^{2\Phi_t}(1 + 3\,\Phi_t),
+\label{eq:nonlinear_static}
+\end{equation}
+where $\rho_t = (4\pi G/c^4)\,T_{00}$ is the temporal source density. This equation incorporates the spatial curvature self-consistently through both the nonlinear gradient term and the exponential source amplification.
+
+To extend this to the dynamic regime, we replace the Laplacian with the d'Alembertian, $\square = \nabla^2 - c^{-2}\partial_t^2$, and retain the corresponding time-derivative nonlinear term. The minimal Lorentz-covariant extension of Eq.~(\ref{eq:nonlinear_static}) is
+\begin{equation}
+\square\,\Phi_t + \frac{1}{2}\left(|\nabla\Phi_t|^2 - \frac{1}{c^2}\left(\frac{\partial\Phi_t}{\partial t}\right)^2\right) = -\rho_t\,e^{2\Phi_t}(1 + 3\,\Phi_t).
+\label{eq:nonlinear_dynamic}
+\end{equation}
+In the static limit, $\partial\Phi_t/\partial t = 0$, and Eq.~(\ref{eq:nonlinear_dynamic}) reduces to Eq.~(\ref{eq:nonlinear_static}). 
+
+For weak fields ($\Phi_t \ll 1$), the nonlinear gradient term and the time-derivative term are both $O(\Phi_t^2)$ and therefore negligible, while $e^{2\Phi_t}(1+3\Phi_t) \approx 1 + O(\Phi_t)$. The linearized equation is
+\begin{equation}
+\square\,\Phi_t = -\rho_t(\mathbf{x}, t),
+\label{eq:linear_dynamic}
+\end{equation}
+which is the standard scalar wave equation. This equation can be derived from the action
+\begin{equation}
+S = \int\left[\frac{c^4}{8\pi G}\left(|\nabla\Phi_t|^2 - \frac{1}{c^2}\left(\frac{\partial\Phi_t}{\partial t}\right)^2\right) - \rho_m c^2\,\Phi_t\right]d^3x\,dt,
+\label{eq:action}
+\end{equation}
+where $T_{00} = \rho_m c^2$ for non-relativistic matter. Varying with respect to $\Phi_t$ and requiring the action to be stationary yields Eq.~(\ref{eq:linear_dynamic}).
+
+The causal solution of Eq.~(\ref{eq:linear_dynamic}) is the retarded potential,
+\begin{equation}
+\Phi_t(\mathbf{x}, t) = \frac{1}{4\pi}\int \frac{\rho_t(\mathbf{x}', t - |\mathbf{x} - \mathbf{x}'|/c)}{|\mathbf{x} - \mathbf{x}'|}\,d^3x',
+\label{eq:retarded}
+\end{equation}
+which ensures that changes in the source propagate at the speed of light $c$. The nonlinear corrections to Eq.~(\ref{eq:linear_dynamic}) become significant only when $\Phi_t \sim O(1)$, corresponding to the strong-field regime near compact objects. However, the time-derivative corrections $\ddot{\Phi}_t + \frac{1}{2}\dot{\Phi}_t^2$ remain relevant even in the weak-field regime: they encode the intrinsic logarithmic compression of the temporal potential, which competes with radiative energy loss to determine the fate of self-gravitating systems. This competition is the subject of Section~\ref{sec:stellar_fate}.
+
+
+\section{Complete Equation of Motion}
+\label{sec:complete_eom}
+
+The equation of motion for a test particle follows from the Euler--Lagrange equation~\cite{Goldstein2002} applied to the Lagrangian defined by the metric~(\ref{eq:exact_metric}),
+\begin{equation}
+\mathcal{L} = -mc^2\sqrt{e^{-2\Phi_t} - e^{2\Phi_t}\,\frac{v^2}{c^2}}.
+\label{eq:lagrangian}
+\end{equation}
+Compared with the Euclidean Lagrangian~\cite{Gwak2026a}, the spatial factor $e^{2\Phi_t}$ encodes the effect of spatial curvature on particle dynamics.
+
+We define the relativistic factor
+$$
+\tilde{\gamma} = \left(e^{-2\Phi_t} - e^{2\Phi_t}\,\frac{v^2}{c^2}\right)^{-1/2},
+\label{eq:gamma_tilde}
+$$
+and the combined metric factor
+$$
+C = 1 + \tilde{\gamma}^2\,e^{2\Phi_t}\,\frac{v^2}{c^2},
+\label{eq:C_def}
+$$
+which satisfies $\tilde{\gamma}^2(e^{-2\Phi_t} - e^{2\Phi_t}\,v^2/c^2) = 1$ and therefore $\tilde{\gamma}^2 e^{-2\Phi_t} = C$.
+
+\paragraph{Canonical momentum and force.}
+
+The canonical momentum is
+\begin{equation}
+p_i = \frac{\partial\mathcal{L}}{\partial v^i} = m\,\tilde{\gamma}\,e^{2\Phi_t}\,v^i,
+\label{eq:momentum}
+\end{equation}
+which differs from the Euclidean case by the factor $e^{2\Phi_t}$ arising from the spatial metric. The force is
+\begin{equation}
+\frac{\partial\mathcal{L}}{\partial x^i} = mc^2\,\tilde{\gamma}\,\partial_i\Phi_t\left(e^{-2\Phi_t} + e^{2\Phi_t}\,\frac{v^2}{c^2}\right),
+\label{eq:force}
+\end{equation}
+where the combination $e^{-2\Phi_t} + e^{2\Phi_t}\,v^2/c^2$ reflects the simultaneous contributions of the temporal and spatial metric perturbations.
+
+\paragraph{Euler--Lagrange equation.}
+
+The Euler--Lagrange equation $d p_i/dt = \partial\mathcal{L}/\partial x^i$ gives, after dividing by $m\tilde{\gamma}\,e^{2\Phi_t}$,
+\begin{equation}
+\mathbf{a} + \tilde{\gamma}^2\,e^{2\Phi_t}\,\frac{\mathbf{v}\cdot\mathbf{a}}{c^2}\,\mathbf{v}
++ (2C + 1)\,\dot{\Phi}_t\,\mathbf{v}
+= c^2\left(e^{-4\Phi_t} + \frac{v^2}{c^2}\right)\nabla\Phi_t,
+\label{eq:eom_implicit}
+\end{equation}
+where $\dot{\Phi}_t = \partial\Phi_t/\partial t + \mathbf{v}\cdot\nabla\Phi_t$ is the total time derivative of the temporal potential along the particle trajectory, and we have used the identity $\tilde{\gamma}^2(e^{-2\Phi_t} + e^{2\Phi_t}\,v^2/c^2) = 2C - 1$.
+
+\paragraph{Solving for the explicit form.}
+
+Following the same algebraic procedure as in the Euclidean case~\cite{Gwak2026a}---taking the dot product of Eq.~(\ref{eq:eom_implicit}) with $\mathbf{v}$ to determine $\mathbf{v}\cdot\mathbf{a}$, and substituting back---we obtain the explicit equation of motion:
+\begin{equation}
+\boxed{\mathbf{a} = -c^2\!\left(e^{-4\Phi_t} + \frac{v^2}{c^2}\right)\mathbf{T}
++ 4\,(\mathbf{v}\cdot\mathbf{T})\,\mathbf{v}
+- \left(3 - e^{4\Phi_t}\frac{v^2}{c^2}\right)\frac{\partial\Phi_t}{\partial t}\,\mathbf{v},}
+\label{eq:eom_dynamic}
+\end{equation}
+where $\mathbf{T} = \nabla(\ln g_t) = -\nabla\Phi_t$. The coefficient of $(\mathbf{v}\cdot\mathbf{T})\,\mathbf{v}$ is exactly $4$, independent of both $C$ and $\Phi_t$. The factor $e^{4\Phi_t}\,v^2/c^2 = v^2/c_{\rm coord}^2$ is the squared ratio of the particle velocity to the local coordinate speed of light $c_{\rm coord} = e^{-2\Phi_t}\,c$, which incorporates both temporal ($e^{-\Phi_t}$) and spatial ($e^{-\Phi_t}$) metric distortions. In the non-relativistic limit ($v \ll c_{\rm coord}$), the time-derivative coefficient approaches $3$.
+
+\paragraph{Decomposition into spatial-curvature and time-dependence effects.}
+
+Eq.~(\ref{eq:eom_dynamic}) contains two independent extensions of the Euclidean equation of motion~\cite{Gwak2026a}: the spatial curvature and the explicit time dependence. Each intermediate equation below is derived by the same Euler--Lagrange procedure as Eq.~(\ref{eq:eom_dynamic}). Removing both (spatial metric $e^{2\Phi_t}\,\delta_{ij}$ replaced by $\delta_{ij}$ and $\partial\Phi_t/\partial t = 0$) recovers the Euclidean static equation,
+$$
+\mathbf{a} = -c^2\,e^{-2\Phi_t}\,\mathbf{T} + 2\,(\mathbf{v}\cdot\mathbf{T})\,\mathbf{v}.
+\label{eq:eom_euclidean_static}
+$$
+Introducing only spatial curvature (retaining $\partial\Phi_t/\partial t = 0$) modifies the field coupling and doubles the velocity coupling,
+$$
+\mathbf{a} = -c^2\!\left(e^{-4\Phi_t} + \frac{v^2}{c^2}\right)\mathbf{T} + 4\,(\mathbf{v}\cdot\mathbf{T})\,\mathbf{v}.
+\label{eq:eom_curved_static}
+$$
+Introducing only time dependence (retaining the Euclidean spatial metric) adds a single term,
+$$
+\mathbf{a} = -c^2\,e^{-2\Phi_t}\,\mathbf{T} + 2\,(\mathbf{v}\cdot\mathbf{T})\,\mathbf{v} - \frac{\partial\Phi_t}{\partial t}\,\mathbf{v}.
+\label{eq:eom_euclidean_dynamic}
+$$
+Eq.~(\ref{eq:eom_dynamic}) combines both effects. The time-derivative coefficient decomposes in the non-relativistic limit as $3 = 1 + 2$: $1$ from the temporal metric and $2$ from the time derivative of $e^{2\Phi_t}$ in the canonical momentum~(\ref{eq:momentum}), encoding the spatial curvature effect. In the weak-field, slow-motion limit ($\Phi_t \ll 1$, $v \ll c$), Eq.~(\ref{eq:eom_dynamic}) reduces to $\mathbf{a} \approx -c^2\,\mathbf{T} - 3\,\frac{\partial\Phi_t}{\partial t}\,\mathbf{v}$, reproducing Newtonian gravity at leading order with the time-derivative term as the only genuinely dynamical contribution.
+
+So far we have completed the first contribution: the equation of motion for test particles. We now turn to the second: the collective dynamics of self-gravitating systems, where logarithmic compression of the temporal potential competes with radiative energy loss to determine whether a system becomes a star or a black hole.
+
+
+\section{Compression, Radiation, and Stellar Fate}
+\label{sec:stellar_fate}
+
+\paragraph{Logarithmic compression from the dynamic field equation.}
+In the quasi-static limit, where the spatial profile adjusts instantaneously to the source, the nonlinear dynamic field equation reduces to an autonomous equation for the temporal potential. Subtracting the static field equation~(\ref{eq:nonlinear_static}) from the dynamic one~(\ref{eq:nonlinear_dynamic}), the spatial terms cancel and only the time-derivative corrections remain:
+\begin{equation}
+\ddot{\Phi}_t + \frac{1}{2}\,\dot{\Phi}_t^2 = 0.
+\label{eq:auto_ode}
+\end{equation}
+This is the homogeneous equation: the intrinsic time evolution of the temporal potential without radiative energy loss. Setting $u = \dot{\Phi}_t$ gives $\dot{u} = -u^2/2$, whose solution is
+\begin{equation}
+\dot{\Phi}_t = \frac{2}{t - t_0}, \qquad \Phi_t = 2\ln\frac{|t - t_0|}{\tau} + C,
+\label{eq:log_solution}
+\end{equation}
+where $\tau$ is a reference timescale that renders the logarithm dimensionless. The constant $C$ is the temporal potential at $t = t_0 + \tau$ and sets the initial depth of the gravitational well. The temporal potential grows logarithmically: the slope $2/(t - t_0)$ decreases over time but never reaches zero in finite time. Since $\Phi_t > 0$ is enforced by the positive-mass source ($\rho_t > 0$), the physically relevant branch is $t > t_0$, where $\Phi_t$ increases with decreasing slope. This logarithmic compression is the natural path of gravitational deepening: as time progresses, the temporal potential deepens at a rate that slows but does not stop.
+
+\paragraph{Compression and radiation in the inhomogeneous equation.}
+
+The inhomogeneous equation
+\begin{equation}
+\boxed{\ddot{\Phi}_t + \frac{1}{2}\,\dot{\Phi}_t^2 = -\Gamma}
+\label{eq:inhomogeneous}
+\end{equation}
+contains both effects: the left-hand side describes the intrinsic logarithmic compression of the temporal potential (the homogeneous dynamics), while $\Gamma$ encodes radiative energy loss. The functional form of $\Gamma$ determines the radiation escape curve $\Phi_t^{\rm rad}(t)$---the maximum temporal potential at which radiation can still escape the gravitational well. The fate of the system depends on $\Gamma$:
+\begin{itemize}
+\item \textbf{$\Gamma = 0$ (no radiative loss):} Substituting the pure logarithmic form $\Phi_t = 2\ln\frac{|t - t_0|}{\tau} + C$ into Eq.~(\ref{eq:inhomogeneous}) gives $\Gamma = 0$ identically. The constant solution $\Phi_t = C$ satisfies the equation mathematically, but the logarithmic compression physically overrides it: the temporal potential deepens along the logarithmic trajectory without restraint, driving $\Phi_t$ upward without bound.
+
+\item \textbf{Constant $\Gamma > 0$:} The solution is
+\begin{equation}
+\Phi_t = 2\ln\left|\cos\frac{t_m - t}{\tau_\Gamma}\right| + \Phi_{t,\max},
+\label{eq:cos_solution}
+\end{equation}
+where $\tau_\Gamma = \sqrt{2/\Gamma}$ is the dissipation timescale and $t_m$ is the time of maximum compression. The temporal potential reaches a maximum $\Phi_{t,\max}$ at $t_m$ and then decreases, guaranteeing dissolution. This state-independent loss rate represents a simplified model in which radiative escape is equally effective at all depths of the potential well.
+
+\item \textbf{Depth-dependent $\Gamma(\Phi_t)$:} In reality, $\Gamma$ is the product of the emission rate and the escape efficiency. As $\Phi_t$ grows, gravitational compression strengthens the emission rate (the energy source of the temporal field grows), while the local coordinate speed of light $c_{\rm coord} = e^{-2\Phi_t}\,c$ decreases, reducing the escape efficiency. Below a critical depth, the product remains positive: radiation continues to escape, though with varying efficiency as emission strengthens and escape weakens. At the critical depth, the escape velocity equals $c_{\rm coord}$ and $\Gamma$ drops to zero discontinuously, driving $\Phi_t^{\rm rad} \to 0$. Beyond this point, only the logarithmic compression remains. This sharp transition separates two qualitatively different regimes and is examined in detail below.
+\end{itemize}
+
+\paragraph{The coupled temporal potential $\Phi_t(t)$.}
+
+The actual temporal potential evolves according to the inhomogeneous equation Eq.~(\ref{eq:inhomogeneous}), shaped by two competing curves: the logarithmic compression pushes $\Phi_t$ upward while the radiation escape curve $\Phi_t^{\rm rad}(t)$ pushes it downward. As long as $\Phi_t^{\rm rad}(t)$ remains positive---that is, as long as radiation can escape---the system evolves as a star. The stellar state terminates through two distinct mechanisms: progressive energy loss drains the source, driving $\Phi_t$ downward toward dissolution ($\Phi_t \downarrow$), while exceeding the black-hole threshold traps radiation and drives unchecked compression ($\Phi_t \uparrow$). These two pathways have opposite directions in $\Phi_t$ and lead to opposite outcomes.
+
+\paragraph{The black-hole threshold $\Phi_t^*$.}
+
+The black-hole threshold $\Phi_t^*$ is the temporal potential at which scalar radiation can no longer escape the gravitational well. The trapping arises from the interplay of both distortions: the temporal factor $e^{-2\Phi_t}$ and the spatial factor $e^{2\Phi_t}$ combine to give the coordinate speed of light $c_{\rm coord} = e^{-2\Phi_t}\,c$, which decreases as $\Phi_t$ grows, eventually preventing radiation from carrying energy outward. The spatial metric $e^{2\Phi_t}\,\delta_{ij}$ acts in the opposite direction---it expands distances as $\Phi_t$ grows, aiding escape rather than trapping. This is a fundamental difference from general relativity, where both spatial and temporal curvature contribute to gravitational confinement: in the temporal field framework, the spatial curvature resists collapse and pushes the threshold to higher values.
+
+The threshold can be estimated by requiring that the escape velocity equals the local coordinate speed of light, $v_{\rm esc} = c_{\rm coord}$. In the weak-field Euclidean approximation, $v_{\rm esc} = c\sqrt{2\Phi_t}$ and $c_{\rm coord} = e^{-2\Phi_t}\,c$ give $\sqrt{2\Phi_t^*} = e^{-2\Phi_t^*}$, whose solution is $\Phi_t^* = W(2)/4 \approx 0.213$, where $W$ is the Lambert $W$ function. This is a lower bound: incorporating the spatial curvature facilitates escape by reducing the effective escape velocity, and the exact threshold requires the full solution of the nonlinear field equation and is left for future work. The weak-field estimate lies within the observed compactness range of neutron stars ($\Phi_t \sim 0.1$--$0.3$). 
+
+\paragraph{Stellar fate.}
+
+The system faces two distinct fates:
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lcc}
+\hline
+Condition & Radiation escape & Outcome \\
+\hline
+$\Phi_t < \Phi_t^*$ & $\Phi_t^{\rm rad}(t) > 0$ & \textbf{Star} (radiation escapes) \\
+$\Phi_t = \Phi_t^*$ & $\Phi_t^{\rm rad}(t) \to 0$ & Threshold crossing \\
+$\Phi_t > \Phi_t^*$ & $\Phi_t^{\rm rad}(t) = 0$ & \textbf{Black hole} (radiation trapped) \\
+\hline
+\end{tabular}
+\end{center}
+Once $\Phi_t$ reaches $\Phi_t^*$, the logarithmic compression proceeds unchecked: $\ddot{\Phi}_t + \frac{1}{2}\dot{\Phi}_t^2 = 0$ with no radiative counterbalance, driving the temporal potential upward without bound. A stable stellar configuration does not exist in the temporal field framework: what we observe as stars are systems in the slow transient where radiation temporarily keeps pace with compression. The eventual fate depends on which mechanism first drives the stellar state to termination: progressive energy loss leads to dissolution, while threshold crossing leads to collapse.
+
+\paragraph{Initial conditions and stellar fate.}
+
+Whether the coupled trajectory $\Phi_t(t)$ reaches the black-hole threshold $\Phi_t^*$ is shaped by both the radiative energy loss and the initial conditions of Eq.~(\ref{eq:log_solution}). A larger $C$ places the system closer to $\Phi_t^*$ from the outset, making collapse more likely. A smaller $C$ leaves more room below the threshold. The constant $t_0$ sets the time origin of the logarithmic trajectory: it shifts the curve horizontally in the $(t, \Phi_t)$ plane and determines the compression rate $\dot{\Phi}_t = 2/(t - t_0)$ at any given time. However, the trajectory in the phase space $(\Phi_t, \dot{\Phi}_t)$ is independent of $t_0$: at any given compression rate, the height of $\Phi_t$ is determined by $C$ and the system's timescale $\tau$. The vertical position $C$ is therefore the dominant factor determining whether $\Phi_t$ reaches $\Phi_t^*$; $t_0$ affects how quickly the system traverses the trajectory but not the trajectory itself.
+
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+We have generalized the temporal field framework from the static to the dynamic regime, building on both the original Euclidean formulation~\cite{Gwak2026a} and its extension to curved spatial geometry~\cite{Gwak2026b}. The paper makes two contributions: the complete equation of motion for particles in the dynamic temporal field, and a black-hole threshold condition that determines the fate of self-gravitating systems.
+
+The first contribution is the complete equation of motion, incorporating both spatial curvature and explicit time dependence:
+$$
+\mathbf{a} = -c^2\!\left(e^{-4\Phi_t} + \frac{v^2}{c^2}\right)\mathbf{T}
++ 4\,(\mathbf{v}\cdot\mathbf{T})\,\mathbf{v}
+- \left(3 - e^{4\Phi_t}\frac{v^2}{c^2}\right)\frac{\partial\Phi_t}{\partial t}\,\mathbf{v},
+$$
+where $\mathbf{T} = -\nabla\Phi_t$. This equation fills the gap left by the static analyses: the spatial curvature modifies the field coupling from $e^{-2\Phi_t}$ to $e^{-4\Phi_t}$ and doubles the velocity coupling, while the time dependence introduces a new term directed along the particle velocity with coefficient $3 = 1 + 2$ ($1$ from the temporal metric, $2$ from the spatial curvature through the canonical momentum). The equation recovers the Euclidean static equation~\cite{Gwak2026a} when both extensions are removed.
+
+The second contribution emerges from the collective dynamics of self-gravitating systems. In the quasi-static limit, the dynamic field equation yields an autonomous logarithmic compression of the temporal potential, $\Phi_t = 2\ln\frac{|t - t_0|}{\tau} + C$, driven by gravitational deepening at a rate that slows but does not stop. Competing against this is radiative energy loss, encoded in the inhomogeneous equation $\ddot{\Phi}_t + \frac{1}{2}\dot{\Phi}_t^2 = -\Gamma$, whose radiation escape curve $\Phi_t^{\rm rad}(t)$ determines the maximum temporal potential at which radiation can still escape. For $\Gamma = 0$, no radiative energy loss occurs: the logarithmic compression proceeds unchecked, while the constant solution is mathematically admissible but cannot be sustained. For $\Gamma > 0$, no constant solution exists at all. In either case, no stable stellar configuration exists in this framework.
+
+The fate of the system is determined by the black-hole threshold $\Phi_t^*$, the temporal potential at which scalar radiation can no longer escape the gravitational well. Below $\Phi_t^*$, radiation escapes and the system evolves as a star; at $\Phi_t^*$, the radiation escape curve drops to zero and only logarithmic compression remains, driving the potential upward without bound. Whether the coupled trajectory reaches $\Phi_t^*$ depends on the initial conditions: the constant $C$ sets the height of the trajectory relative to the threshold and determines the ultimate fate, while $t_0$ affects only the rate of evolution. A larger $C$ places the system closer to $\Phi_t^*$ from the outset, making collapse more likely. The threshold can be estimated as $\Phi_t^* = W(2)/4 \approx 0.213$ in the weak-field limit; incorporating spatial curvature shifts the value upward, and the exact determination requires the full solution of the nonlinear field equation.
+
+The apparent stability of stars is an artifact of the observational timescale: for stars with $\Phi_t \ll 1$, compression is exceedingly slow, and what we observe as stars are transient systems where radiation temporarily keeps pace with compression. The Sun ($\Phi_t \sim 10^{-6}$) is a prime example, evolving too slowly to reveal any change within the age of the universe, while black holes have already crossed the threshold. Neutron stars occupy a unique position: with $\Phi_t \sim 0.1$--$0.3$, the weak-field estimate $\Phi_t^* \approx 0.213$ lies squarely within their compactness range. If some neutron stars undergo black-hole collapse, the observed population would provide the first direct constraint on the threshold value, while their compression timescale is potentially within observational reach. The transition between radiative equilibrium and irreversible collapse should be detectable in these objects, making them the decisive test of this framework.
+
+
+\vspace{1em}
+\noindent\textbf{Acknowledgements}
+
+\vspace{0.5em}
+\noindent The author developed the overall theoretical framework and takes full responsibility for the content of this work. AI-based tools were employed to assist in certain analytical derivations, as well as for language refinement and manuscript preparation.
+
+
+\begin{thebibliography}{99}
+
+\bibitem{Gwak2026a}
+Y.~Gwak, ``A Temporal Decomposition of Gravitational Effects,'' Zenodo, 2026.
+\href{https://doi.org/10.5281/zenodo.20268613}{doi:10.5281/zenodo.20268613}.
+
+\bibitem{Gwak2026b}
+Y.~Gwak, ``Causal Origin of Spatial Curvature in the Temporal Field Framework,'' Zenodo, 2026.
+\href{https://doi.org/10.5281/zenodo.21451658}{doi:10.5281/zenodo.21451658}.
+
+\bibitem{Hawking1973}
+S.~W.~Hawking and G.~F.~R.~Ellis, \textit{The Large Scale Structure of Space-Time} (Cambridge University Press, Cambridge, 1973).
+
+\bibitem{Will2014}
+C.~M.~Will, ``The Confrontation between General Relativity and Experiment,''
+Living Rev.~Relativ.~\textbf{17}, 4 (2014).
+
+\bibitem{Goldstein2002}
+H.~Goldstein, C.~Poole, and J.~Safko, \emph{Classical Mechanics}, 3rd ed.
+(Addison-Wesley, San Francisco, 2002).
+
+\end{thebibliography}
+
+\end{document}
