@@ -6,9 +6,9 @@ A causal scalar field framework for gravity, where the temporal field is the fun
 
 | Paper | Title | DOI |
 |---|---|---|
-| Paper 1 | A Temporal Decomposition of Gravitational Effects | [10.5281/zenodo.20268613](https://doi.org/10.5281/zenodo.20268613) |
-| Paper 2 | Causal Origin of Spatial Curvature in the Temporal Field Framework | [10.5281/zenodo.21451658](https://doi.org/10.5281/zenodo.21451658) |
-| Paper 3 | Dynamics of the Temporal Field: Compression, Radiation, and Stellar Fate | [10.5281/zenodo.23226381](https://doi.org/10.5281/zenodo.23226381) |
+| 1 | A Temporal Decomposition of Gravitational Effects | [10.5281/zenodo.20268613](https://doi.org/10.5281/zenodo.20268613) |
+| 2 | Causal Origin of Spatial Curvature in the Temporal Field Framework | [10.5281/zenodo.21451658](https://doi.org/10.5281/zenodo.21451658) |
+| 3 | Dynamics of the Temporal Field: Compression, Radiation, and Stellar Fate | [10.5281/zenodo.23226381](https://doi.org/10.5281/zenodo.23226381) |
 
 ## Summary
 
